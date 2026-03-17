@@ -1,0 +1,226 @@
+/* ===== Contact Hero ===== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+.c-hero {
+  position: relative;
+  width: 100%;
+  height: 88vh;
+  min-height: 600px;
+  max-height: 900px;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+}
+
+/* Background */
+.c-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.c-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoomBg 20s ease-in-out infinite alternate;
+}
+
+.c-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.6)
+  );
+}
+
+/* Floating Shapes */
+.c-hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  background: rgba(201, 162, 45, 0.15);
+  animation: float 10s ease-in-out infinite;
+}
+
+.c-shape-1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  right: 5%;
+}
+
+.c-shape-2 {
+  width: 200px;
+  height: 200px;
+  bottom: 20%;
+  left: 10%;
+  animation-delay: 2s;
+}
+
+.c-shape-3 {
+  width: 150px;
+  height: 150px;
+  top: 40%;
+  left: 30%;
+  animation-delay: 4s;
+}
+
+/* Container */
+.c-hero-container {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Title */
+.c-hero-title-block {
+  text-align: center;
+  margin-bottom: 50px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.c-hero-subtitle {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c9a22d;
+  padding: 0.3rem 1.2rem;
+  border-radius: 30px;
+  border: 1px solid rgba(201, 162, 45, 0.3);
+  background: rgba(201, 162, 45, 0.15);
+  margin-bottom: 1rem;
+}
+
+.c-hero-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.c-hero-title span {
+  display: block;
+  font-size: 3.5rem;
+  color: #c9a22d;
+}
+
+.c-hero-desc {
+  max-width: 500px;
+  margin: auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Stats */
+.c-hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 30px;
+  border-radius: 60px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.2s forwards;
+}
+
+.c-stat {
+  text-align: center;
+  min-width: 80px;
+}
+
+.c-stat-number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #c9a22d;
+}
+
+.c-stat-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.c-stat-divider {
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Animations */
+@keyframes zoomBg {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+@keyframes float {
+  0%,100% { transform: translate(0,0) scale(1); }
+  33% { transform: translate(30px,-30px) scale(1.1); }
+  66% { transform: translate(-20px,20px) scale(0.9); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .c-hero-title { font-size: 3.5rem; }
+  .c-hero-title span { font-size: 2.8rem; }
+}
+
+@media (max-width: 600px) {
+  .c-hero {
+    height: auto;
+    min-height: 90vh;
+    padding: 60px 0;
+  }
+
+  .c-hero-title { font-size: 2.5rem; }
+  .c-hero-title span { font-size: 2rem; }
+
+  .c-hero-desc {
+    font-size: 0.9rem;
+    padding: 0 20px;
+  }
+
+  .c-hero-stats {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 30px;
+    width: 90%;
+  }
+
+  .c-stat-divider { display: none; }
+
+  .c-stat {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

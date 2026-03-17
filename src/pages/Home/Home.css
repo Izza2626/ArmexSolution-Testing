@@ -1,0 +1,51 @@
+/* Home page container */
+.home-page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #0C1323; /* Your brand dark blue */
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section spacing - only add margin/padding within sections themselves */
+/* This ensures sections stack naturally */
+
+/* Optional: Add subtle separator between sections */
+section {
+  position: relative;
+}
+
+/* Add a subtle gold gradient line between sections */
+section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A22D, #F3E6AF, #C9A22D, transparent);
+  opacity: 0.3;
+}
+
+/* Remove the line after the last section */
+section:last-child::after {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  section::after {
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  section::after {
+    width: 60px;
+  }
+}

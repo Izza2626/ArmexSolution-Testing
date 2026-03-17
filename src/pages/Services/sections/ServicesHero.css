@@ -1,0 +1,350 @@
+/* ===== Service Hero - One-by-One Navigation ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+.sh-hero {
+  position: relative;
+  height: 87vh;
+  min-height: 600px;
+  max-height: 900px;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  color: white;
+}
+
+/* Background */
+.sh-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.6s ease;
+  z-index: 1;
+}
+
+.sh-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 2;
+}
+
+.sh-container {
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+
+/* Left Content */
+.sh-content {
+  max-width: 500px;
+  animation: shFadeIn 0.5s ease;
+}
+
+@keyframes shFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sh-subtitle {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #C9A22D;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: rgba(201, 162, 45, 0.15);
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(201, 162, 45, 0.3);
+}
+
+.sh-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0 0 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.sh-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #e0e0e0;
+  margin: 0 0 1.5rem;
+  max-width: 400px;
+}
+
+.sh-btn {
+  padding: 0.7rem 1.8rem;
+  background: #C9A22D;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(201, 162, 45, 0.3);
+}
+
+.sh-btn:hover {
+  background: #b08f28;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(201, 162, 45, 0.4);
+}
+
+/* Cards - Original Position */
+.sh-cards {
+  display: flex;
+  gap: 15px;
+  position: absolute;
+  bottom: 100px;
+  right: 40px;
+}
+
+.sh-card {
+  width: 130px;
+  height: 180px;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.sh-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.sh-card:hover {
+  opacity: 0.8;
+  transform: translateY(-5px);
+}
+
+.sh-card:hover .sh-card-img {
+  transform: scale(1.1);
+}
+
+.sh-active {
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(201, 162, 45, 0.3);
+  border: 2px solid #C9A22D;
+}
+
+.sh-active:hover {
+  transform: scale(1.05) translateY(-3px);
+}
+
+.sh-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent 60%);
+  z-index: 2;
+}
+
+.sh-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 10px;
+  z-index: 3;
+  text-align: left;
+}
+
+.sh-card-title {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.sh-card-subtitle {
+  display: block;
+  font-size: 0.6rem;
+  color: #C9A22D;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* Bottom Center Navigation - Only Arrows */
+.sh-nav-bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+}
+
+.sh-nav-circle {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.sh-nav-circle:hover:not(.sh-nav-disabled) {
+  background: #C9A22D;
+  border-color: #C9A22D;
+  transform: scale(1.1);
+}
+
+.sh-nav-disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Slide Number */
+.sh-number {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+  font-size: 5rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.1);
+  line-height: 1;
+  z-index: 4;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .sh-title {
+    font-size: 3.2rem;
+  }
+  
+  .sh-card {
+    width: 110px;
+    height: 160px;
+  }
+  
+  .sh-number {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .sh-hero {
+    height: auto;
+    min-height: 80vh;
+    padding: 60px 0;
+  }
+  
+  .sh-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .sh-content {
+    margin-bottom: 40px;
+  }
+  
+  .sh-cards {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 60px;
+    gap: 10px;
+  }
+  
+  .sh-card {
+    width: 100px;
+    height: 140px;
+  }
+  
+  .sh-nav-bottom {
+    bottom: 20px;
+  }
+  
+  .sh-number {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sh-title {
+    font-size: 2.2rem;
+  }
+  
+  .sh-card {
+    width: 80px;
+    height: 120px;
+  }
+  
+  .sh-card-title {
+    font-size: 0.7rem;
+  }
+  
+  .sh-card-subtitle {
+    font-size: 0.5rem;
+  }
+  
+  .sh-nav-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+  
+  .sh-number {
+    font-size: 3rem;
+    bottom: 15px;
+    right: 20px;
+  }
+}

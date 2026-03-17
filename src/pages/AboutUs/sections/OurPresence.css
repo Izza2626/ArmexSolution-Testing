@@ -1,0 +1,367 @@
+/* ===== Our Presence - Clean Version ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.op-section {
+  padding: 70px 0;
+  background: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+.op-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.op-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.op-subtitle {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #C9A22D;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: rgba(201, 162, 45, 0.08);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.op-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1e2b37;
+  margin: 0 0 0.8rem;
+}
+
+.op-title span {
+  color: #C9A22D;
+}
+
+.op-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Map Container */
+.op-map-simple {
+  background: #f8fafc;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 40px;
+  border: 1px solid #edf2f7;
+}
+
+.op-map-minimal {
+  position: relative;
+  height: 180px;
+  background: #ffffff;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Markers */
+.op-markers-simple {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.op-marker-simple {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.op-marker-simple.op-visible {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Marker Positions */
+.op-marker-usa { top: 30%; left: 15%; transition-delay: 0.1s; }
+.op-marker-uk { top: 25%; left: 40%; transition-delay: 0.2s; }
+.op-marker-uae { top: 45%; left: 55%; transition-delay: 0.3s; }
+.op-marker-ksa { top: 50%; left: 52%; transition-delay: 0.4s; }
+.op-marker-india { top: 60%; left: 70%; transition-delay: 0.5s; }
+
+.op-marker-dot-simple {
+  width: 12px;
+  height: 12px;
+  background: #C9A22D;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(201, 162, 45, 0.3);
+  animation: opPulse 2s ease-in-out infinite;
+}
+
+@keyframes opPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+.op-dot-hq {
+  width: 14px;
+  height: 14px;
+  background: #C9A22D;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 4px rgba(201, 162, 45, 0.2);
+}
+
+.op-marker-flag-simple {
+  font-size: 1rem;
+  margin-top: 5px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+  background: #ffffff;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.op-marker-simple:hover .op-marker-flag-simple {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Connection Line */
+.op-line-simple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Map Legend */
+.op-map-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.8rem;
+  background: #ffffff;
+  border-radius: 40px;
+  font-size: 0.75rem;
+}
+
+.op-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.op-legend-dot {
+  width: 8px;
+  height: 8px;
+  background: #C9A22D;
+  border-radius: 50%;
+}
+
+.op-legend-text {
+  color: #475569;
+}
+
+/* Stats Row */
+.op-stats-simple {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 40px;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 60px;
+  border: 1px solid #edf2f7;
+}
+
+.op-stat-simple {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.op-stat-simple:not(:last-child) {
+  border-right: 1px solid #e2e8f0;
+}
+
+.op-stat-simple-icon {
+  font-size: 1.5rem;
+  color: #C9A22D;
+  opacity: 0.8;
+}
+
+.op-stat-simple-value {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e2b37;
+  line-height: 1.3;
+}
+
+.op-stat-simple-label {
+  font-size: 0.65rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Certifications */
+.op-cert-simple {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 35px;
+  justify-content: center;
+}
+
+.op-cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 1.2rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 40px;
+  font-size: 0.75rem;
+  color: #1e2b37;
+  transition: all 0.2s ease;
+}
+
+.op-cert-badge:hover {
+  border-color: #C9A22D;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201, 162, 45, 0.1);
+}
+
+.op-cert-badge-icon {
+  color: #C9A22D;
+  font-size: 0.9rem;
+}
+
+/* HQ Badge */
+.op-hq-simple {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 1rem 2rem;
+  background: rgba(201, 162, 45, 0.05);
+  border-radius: 50px;
+  border: 1px solid rgba(201, 162, 45, 0.2);
+  font-size: 0.9rem;
+  color: #1e2b37;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.op-hq-simple-icon {
+  color: #C9A22D;
+  font-size: 1.1rem;
+  animation: opBounce 2s ease-in-out infinite;
+}
+
+@keyframes opBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.op-hq-simple strong {
+  color: #C9A22D;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .op-title {
+    font-size: 1.8rem;
+  }
+  
+  .op-map-minimal {
+    height: 160px;
+  }
+  
+  .op-stats-simple {
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 30px;
+    padding: 1.2rem;
+  }
+  
+  .op-stat-simple {
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 10px;
+  }
+  
+  .op-stat-simple:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .op-section {
+    padding: 50px 0;
+  }
+  
+  .op-title {
+    font-size: 1.5rem;
+  }
+  
+  .op-map-minimal {
+    height: 140px;
+  }
+  
+  .op-map-simple {
+    padding: 1.2rem;
+  }
+  
+  .op-map-legend {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
+    padding: 0.8rem 1.2rem;
+  }
+  
+  .op-cert-simple {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .op-cert-badge {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .op-hq-simple {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.8rem;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  
+  .op-marker-flag-simple {
+    display: none;
+  }
+}
