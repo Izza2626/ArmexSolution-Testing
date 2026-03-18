@@ -1,0 +1,374 @@
+/* ===== Upload CV Section ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.ucv-section {
+  padding: 70px 0;
+  background: #f8fafc;
+  font-family: 'Inter', sans-serif;
+}
+
+.ucv-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* Header */
+.ucv-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.ucv-subtitle {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #C9A22D;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: rgba(201, 162, 45, 0.08);
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+}
+
+.ucv-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1e2b37;
+  margin: 0 0 1rem;
+}
+
+.ucv-title span {
+  color: #C9A22D;
+}
+
+.ucv-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid */
+.ucv-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* Form Card */
+.ucv-form-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.ucv-form-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e2b37;
+  margin: 0 0 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+/* Form Fields */
+.ucv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ucv-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ucv-field label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.ucv-field input,
+.ucv-field select {
+  padding: 12px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: #1e2b37;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.ucv-field input:focus,
+.ucv-field select:focus {
+  outline: none;
+  border-color: #C9A22D;
+  box-shadow: 0 0 0 3px rgba(201, 162, 45, 0.1);
+  background: #ffffff;
+}
+
+/* File Upload */
+.ucv-file-input {
+  position: relative;
+}
+
+.ucv-file-input input[type="file"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.ucv-file-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  background: #f8fafc;
+  border: 2px dashed #e2e8f0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ucv-file-label:hover {
+  border-color: #C9A22D;
+  background: rgba(201, 162, 45, 0.02);
+}
+
+.ucv-upload-icon {
+  color: #C9A22D;
+  font-size: 1.2rem;
+}
+
+.ucv-file-label span {
+  font-size: 0.85rem;
+  color: #475569;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Status Message */
+.ucv-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 15px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid #10b981;
+  border-radius: 12px;
+  color: #065f46;
+}
+
+.ucv-status-icon {
+  color: #10b981;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.ucv-status span {
+  font-size: 0.85rem;
+}
+
+/* Submit Button */
+.ucv-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 25px;
+  background: #C9A22D;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.ucv-submit-btn:hover {
+  background: #b08f28;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(201, 162, 45, 0.3);
+}
+
+.ucv-submit-icon {
+  transition: transform 0.3s ease;
+}
+
+.ucv-submit-btn:hover .ucv-submit-icon {
+  transform: translateX(5px);
+}
+
+/* Info Card */
+.ucv-info-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.ucv-info-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e2b37;
+  margin: 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.ucv-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ucv-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.ucv-info-icon {
+  color: #C9A22D;
+  font-size: 1.2rem;
+  margin-top: 2px;
+}
+
+.ucv-info-item div {
+  display: flex;
+  flex-direction: column;
+}
+
+.ucv-info-label {
+  font-size: 0.7rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.ucv-info-item a,
+.ucv-info-item span {
+  font-size: 0.9rem;
+  color: #1e2b37;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.ucv-info-item a:hover {
+  color: #C9A22D;
+}
+
+/* Note */
+.ucv-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 15px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.ucv-note-icon {
+  color: #C9A22D;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ucv-note p {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Privacy */
+.ucv-privacy {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(201, 162, 45, 0.05);
+  border-radius: 12px;
+}
+
+.ucv-privacy-icon {
+  color: #C9A22D;
+  font-size: 0.9rem;
+}
+
+.ucv-privacy span {
+  font-size: 0.75rem;
+  color: #475569;
+}
+
+/* Bottom Note */
+.ucv-bottom-note {
+  text-align: center;
+  padding: 20px 0 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.ucv-bottom-note p {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.ucv-bottom-note a {
+  color: #C9A22D;
+  text-decoration: none;
+  margin: 0 3px;
+}
+
+.ucv-bottom-note a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ucv-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .ucv-form-card,
+  .ucv-info-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ucv-section {
+    padding: 50px 0;
+  }
+  
+  .ucv-title {
+    font-size: 1.6rem;
+  }
+  
+  .ucv-form-card,
+  .ucv-info-card {
+    padding: 20px;
+  }
+}

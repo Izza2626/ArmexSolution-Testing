@@ -7,7 +7,7 @@ import './ContactUs.css';
 import ConnectSection from './sections/ConnectSection.jsx';
 import ContactForm from './sections/ContactForm.jsx';
 
-const Contact = () => {
+const Contact = () => { 
   return (
     <>
       {/* SEO removed since component doesn't exist */}

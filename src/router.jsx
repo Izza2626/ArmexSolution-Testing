@@ -6,6 +6,7 @@ import AboutUs from "./pages/AboutUs/AboutUs";
 import Services from "./pages/Services/Services";
 import ServiceDetail from "./pages/Services/sections/ServiceDetail";
 import ContactUs from "./pages/ContactUs/ContactUs";
+import Career from "./pages/Career/Career";
 import Sitemap from "./pages/Sitemap/Sitemap";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions/TermsConditions";
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       { path: "services/:serviceId", element: <ServiceDetail /> },
 
       { path: "contact-us", element: <ContactUs /> },
+      { path: "career", element: <Career /> },
       { path: "sitemap", element: <Sitemap /> },
       { path: "privacy-policy", element: <PrivacyPolicy /> },
       { path: "terms-and-conditions", element: <TermsConditions /> },
