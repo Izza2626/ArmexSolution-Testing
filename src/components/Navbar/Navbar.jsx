@@ -8,6 +8,7 @@ import {
   HiOutlineCube,
   HiOutlinePhone,
 } from "react-icons/hi";
+import NavLogo from '../../assets/images/logo.svg'
 import "./Navbar.css";
 
 const navLinks = [
@@ -35,7 +36,7 @@ const Navbar = () => {
         {/* Logo — left */}
         <Link to="/" className="navbar__logo" aria-label="Armex home">
           <img
-            src="/logo.svg"
+            src={NavLogo}
             alt="Armex Business Solutions"
             className="navbar__logo-img"
             width="160"

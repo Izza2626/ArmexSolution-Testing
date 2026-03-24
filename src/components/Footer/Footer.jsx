@@ -1,7 +1,7 @@
 import "./Footer.css";
 import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import logo2 from '../../../public/logo2.svg' // added
+import FootLogo from '../../assets/images/logo2.svg'
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -13,7 +13,7 @@ const Footer = () => {
         {/* Brand */}
         <section className="as-footer-col">
           <div className="as-footer-logo-box">
-            <img src={logo2} alt="Armex Solutions Logo" />
+            <img src={FootLogo} alt="Armex Solutions Logo" />
           </div>
           <p className="as-footer-tagline">
             ARMEX SOLUTIONS is a premier provider of accurate, constructible,
