@@ -1,6 +1,7 @@
 import "./Footer.css";
 import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import logo2 from '../../../public/logo2.svg' // added
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -11,7 +12,9 @@ const Footer = () => {
 
         {/* Brand */}
         <section className="as-footer-col">
-          <h2 className="as-footer-logo">ARMEX SOLUTIONS</h2>
+          <div className="as-footer-logo-box">
+            <img src={logo2} alt="Armex Solutions Logo" />
+          </div>
           <p className="as-footer-tagline">
             ARMEX SOLUTIONS is a premier provider of accurate, constructible,
             and code-compliant rebar detailing services for global construction projects.

@@ -1,0 +1,236 @@
+/* ===== Who We Are Section ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+.wwa-section {
+  padding: 80px 0;
+  background: #ffffff;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Pattern */
+.wwa-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(201, 162, 45, 0.02) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.wwa-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(201, 162, 45, 0.02) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.wwa-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Left Content */
+.wwa-content {
+  animation: wwaFadeLeft 0.8s ease-out forwards;
+}
+
+@keyframes wwaFadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.wwa-subtitle {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #C9A22D;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: rgba(201, 162, 45, 0.08);
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+}
+
+.wwa-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1e2b37;
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+}
+
+.wwa-title span {
+  color: #C9A22D;
+  position: relative;
+  display: inline-block;
+}
+
+.wwa-title span::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(201, 162, 45, 0.2);
+  z-index: -1;
+}
+
+.wwa-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0;
+}
+
+/* Right Grid */
+.wwa-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  animation: wwaFadeRight 0.8s ease-out forwards;
+}
+
+@keyframes wwaFadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Cards */
+.wwa-card {
+  background: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 20px;
+  padding: 25px 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+}
+
+.wwa-card:hover {
+  border-color: #C9A22D;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(201, 162, 45, 0.08);
+}
+
+.wwa-card-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(201, 162, 45, 0.1);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  color: #C9A22D;
+  transition: all 0.3s ease;
+}
+
+.wwa-card:hover .wwa-card-icon {
+  background: #C9A22D;
+  color: white;
+  transform: rotate(360deg);
+}
+
+.wwa-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e2b37;
+  margin: 0 0 8px;
+}
+
+.wwa-card-desc {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.wwa-card-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+
+.wwa-card:hover .wwa-card-shine {
+  left: 100%;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .wwa-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .wwa-content {
+    text-align: center;
+  }
+  
+  .wwa-grid {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .wwa-section {
+    padding: 50px 0;
+  }
+  
+  .wwa-title {
+    font-size: 1.6rem;
+  }
+  
+  .wwa-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .wwa-card {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .wwa-card-icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -51,17 +51,16 @@ const CompanyOverview = () => {
         {/* LEFT CONTENT */}
         <div className="co-left co-fade-left">
 
-          <span className="co-badge co-slide-down">ABOUT COMPANY</span>
+          <span className="co-badge co-slide-down">OVERVIEW</span>
 
           <h2 className="co-title">
             Delivering <span>Precision Rebar Detailing</span> Worldwide
           </h2>
 
           <p className="co-desc co-slide-up">
-            Founded in Chennai in 2015, our engineering team provides
-            high-precision rebar detailing and BIM coordination services
-            for global infrastructure, commercial and residential projects.
-          </p>
+Our expertise lies in producing accurate rebar shop drawings, bar bending schedules, and 3D BIM models that comply with international codes such as BS 8666, Eurocode 2, ACI 318, ASTM, and IS Codes.           </p>
+          <p className="co-desc co-slide-up">
+By combining technical depth with advanced digital workflows, we ensure every project meets the highest standards of compliance, efficiency, and buildability.          </p>
 
           {/* Feature List */}
           <div className="co-features">

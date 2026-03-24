@@ -94,7 +94,7 @@ const HomeIntro = () => {
               <span className="homeIntro-miniLabel">Projects</span>
             </div>
             <div className="homeIntro-miniStat">
-              <span className="homeIntro-miniNumber" style={{ color: "#243F88" }}>20+</span>
+              <span className="homeIntro-miniNumber" style={{ color: "#243F88" }}>10+</span>
               <span className="homeIntro-miniLabel">Countries</span>
             </div>
             <div className="homeIntro-miniStat">

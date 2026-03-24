@@ -3,84 +3,84 @@ export const servicesData = [
     id: '3d-rebar-modelling',
     title: '3D REBAR',
     subtitle: 'MODELLING',
-    tagline: 'Intelligent 3D Reinforcement Models',
-    shortDesc: 'BIM-integrated 3D rebar models with clash detection and constructability validation',
-    description: `Our 3D rebar modelling service delivers intelligent, fully coordinated reinforcement models that provide a clear, accurate, and clash-free representation of reinforcement within structural elements. We develop models using industry-standard BIM software including Revit, Tekla, and RebarCAD.`,
+    tagline: 'BIM-Integrated 3D Rebar Modelling',
+    shortDesc: 'Intelligent BIM-integrated 3D reinforcement models for coordination and clash-free execution',
+    description: `We develop intelligent BIM-integrated 3D reinforcement models that precisely represent reinforcement within structural elements. Our modelling approach enables seamless coordination with structural, architectural, and MEP disciplines while facilitating early clash detection and constructability validation. By leveraging advanced BIM workflows, we enhance design clarity, minimize site conflicts, and support efficient construction delivery.`,
     bgImage: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
     cardImage: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     features: [
-      'Intelligent 3D reinforcement models',
-      'Clash detection and resolution',
+      'BIM-integrated 3D models',
+      'Clash detection and coordination',
       'Constructability validation',
-      'BIM coordination with other disciplines',
-      'Material optimization',
-      'Fabrication-ready output'
+      'Multi-discipline integration',
+      'Accurate reinforcement representation',
+      'Advanced BIM workflows'
     ],
     benefits: [
-      'Reduce errors and rework',
-      'Early conflict identification',
-      'Improved visualization',
+      'Improved design clarity',
+      'Reduced site conflicts',
       'Better coordination',
-      'Reduced material wastage',
-      'Faster site execution'
+      'Enhanced visualization',
+      'Faster execution',
+      'Efficient delivery'
     ],
     standards: ['BS 8666', 'Eurocode 2', 'ACI 318', 'IS Codes'],
     software: ['Revit', 'Tekla', 'RebarCAD', 'Navisworks'],
-    industries: ['High-rise buildings', 'Bridges', 'Infrastructure', 'Industrial structures']
+    industries: ['High-rise buildings', 'Infrastructure', 'Industrial projects']
   },
   {
     id: '2d-reinforcement-detailing',
     title: '2D SHOP',
     subtitle: 'DRAWINGS',
-    tagline: 'Fabrication-Ready Shop Drawings',
-    shortDesc: 'Clear and accurate 2D reinforcement drawings for smooth fabrication and installation',
-    description: `Our 2D reinforcement detailing service produces clear, accurate, and fabrication-ready shop drawings that provide complete detailing of reinforcement for all structural elements. Each drawing includes precise bar placement, spacing, lap lengths, anchorage, and bending details.`,
+    tagline: 'Precision Reinforcement Detailing & Fabrication Drawings',
+    shortDesc: 'High-precision reinforcement detailing and fabrication-ready shop drawings',
+    description: `Our team delivers high-precision reinforcement detailing and fabrication-ready shop drawings aligned with international standards and project specifications. Each drawing provides comprehensive information on bar placement, spacing, anchorage, laps, and reinforcement arrangements, enabling contractors and fabrication teams to execute reinforcement works with accuracy and efficiency.`,
     bgImage: 'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
     cardImage: 'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     features: [
-      'Fabrication-ready shop drawings',
-      'Clear bar placement and spacing',
-      'Lap lengths and anchorage details',
-      'Bending schedules',
-      'Multi-level quality checks',
-      'Code-compliant deliverables'
+      'Fabrication-ready drawings',
+      'Detailed bar placement',
+      'Spacing and anchorage details',
+      'Lap and reinforcement detailing',
+      'Code compliance',
+      'Quality-checked outputs'
     ],
     benefits: [
-      'Reduced site errors',
-      'Fewer RFIs',
-      'Faster installation',
-      'Improved coordination',
-      'Cost savings',
-      'Smooth approvals'
+      'Accurate execution',
+      'Reduced errors',
+      'Improved efficiency',
+      'Smooth approvals',
+      'Better coordination',
+      'Time savings'
     ],
     standards: ['BS 8666', 'Eurocode 2', 'ACI 318', 'IS Codes'],
     software: ['AutoCAD', 'Revit', 'RebarCAD'],
-    industries: ['Residential', 'Commercial', 'Industrial', 'Infrastructure']
+    industries: ['Residential', 'Commercial', 'Industrial']
   },
   {
     id: 'bar-bending-schedules',
     title: 'BAR BENDING',
     subtitle: 'SCHEDULES',
-    tagline: 'Accurate Bar Bending Schedules',
-    shortDesc: 'Comprehensive BBS with shape codes, cutting lengths, and quantities',
-    description: `We prepare comprehensive and accurate Bar Bending Schedules (BBS) that provide complete information required for reinforcement fabrication, material planning, and site execution. Our schedules are developed directly from detailed reinforcement drawings and models.`,
+    tagline: 'Intelligent Bar Bending Schedule (BBS) Engineering',
+    shortDesc: 'Optimized and fabrication-ready BBS for efficient production and cost control',
+    description: `We produce optimized and fabrication-ready Bar Bending Schedules derived directly from reinforcement models and detailed drawings. These schedules include precise bar marks, shapes, cutting lengths, quantities, and weights, helping fabrication facilities streamline production processes while reducing material wastage and improving cost control.`,
     bgImage: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
     cardImage: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     features: [
-      'Complete bar information',
-      'Shape codes and bending details',
+      'Bar marks and shapes',
       'Cutting lengths',
-      'Quantities and weight',
-      'Material optimization',
-      'Traceability'
+      'Quantity and weight details',
+      'Optimized schedules',
+      'Fabrication-ready outputs',
+      'Data-driven accuracy'
     ],
     benefits: [
-      'Efficient fabrication',
       'Reduced wastage',
-      'Better material planning',
-      'Cost control',
-      'Clear site instructions',
-      'Improved accuracy'
+      'Improved cost control',
+      'Efficient fabrication',
+      'Streamlined production',
+      'Better planning',
+      'Higher accuracy'
     ],
     standards: ['BS 8666', 'Eurocode 2', 'ACI 318', 'IS Codes'],
     software: ['RebarCAD', 'Excel', 'AutoCAD'],
@@ -90,26 +90,26 @@ export const servicesData = [
     id: 'rebar-estimation',
     title: 'REBAR',
     subtitle: 'ESTIMATION',
-    tagline: 'Precise Quantity Takeoffs',
-    shortDesc: 'Accurate rebar quantity calculations for project planning and cost management',
-    description: `Our rebar estimation service provides accurate and reliable quantity takeoffs from structural drawings, reinforcement models, and project specifications. We ensure precise calculation of reinforcement quantities required for each structural element.`,
+    tagline: 'BIM-Based Rebar Quantity Intelligence',
+    shortDesc: 'Accurate BIM-based quantity take-offs and analytical estimation reports',
+    description: `Through detailed BIM models and reinforcement data, we deliver accurate rebar quantity take-offs and analytical estimation reports. Our quantity intelligence enables project teams to plan procurement strategies, forecast material requirements, and monitor reinforcement consumption throughout the project lifecycle.`,
     bgImage: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
     cardImage: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     features: [
-      'Quantity takeoffs',
-      'Weight calculations',
-      'Element-wise reporting',
-      'Material summaries',
-      'Budget planning',
-      'Procurement support'
+      'BIM-based quantity takeoffs',
+      'Analytical reports',
+      'Material forecasting',
+      'Procurement planning',
+      'Consumption tracking',
+      'Data-driven insights'
     ],
     benefits: [
       'Accurate budgeting',
-      'Efficient procurement',
-      'Reduced wastage',
-      'Cost control',
+      'Better procurement',
+      'Cost efficiency',
       'Resource planning',
-      'Decision support'
+      'Project control',
+      'Improved decisions'
     ],
     standards: ['BS 8666', 'Eurocode 2', 'ACI 318', 'IS Codes'],
     software: ['Bluebeam', 'Excel', 'RebarCAD'],
@@ -119,55 +119,55 @@ export const servicesData = [
     id: 'general-arrangement-drawings',
     title: 'GA',
     subtitle: 'DRAWINGS',
-    tagline: 'Clear General Arrangement Drawings',
-    shortDesc: 'Overall reinforcement layout drawings for better coordination',
-    description: `We prepare clear and well-structured General Arrangement (GA) drawings that provide an overall view of reinforcement layout within structural elements. These drawings serve as a critical reference for understanding reinforcement distribution and structural configuration.`,
+    tagline: 'Integrated Structural GA Drawings',
+    shortDesc: 'Coordinated GA drawings for clear reinforcement layout and structural alignment',
+    description: `We prepare fully coordinated General Arrangement (GA) drawings that clearly communicate the layout and structural positioning of reinforcement within the project. These drawings provide a comprehensive visual reference for construction teams and ensure alignment between design intent and site execution.`,
     bgImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
     cardImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     features: [
-      'Overall reinforcement layout',
-      'Structural configuration',
-      'Simplified format',
-      'Cross-referencing',
-      'Coordination views',
+      'Reinforcement layout clarity',
+      'Structural positioning',
+      'Coordinated drawings',
+      'Visual communication',
+      'Cross-discipline alignment',
       'Clear annotations'
     ],
     benefits: [
       'Improved coordination',
-      'Better visualization',
-      'Clear communication',
+      'Better understanding',
       'Reduced misinterpretation',
-      'Efficient planning',
-      'Stakeholder alignment'
+      'Efficient execution',
+      'Clear communication',
+      'Team alignment'
     ],
     standards: ['BS 8666', 'Eurocode 2', 'ACI 318', 'IS Codes'],
     software: ['AutoCAD', 'Revit'],
-    industries: ['Complex structures', 'Large-scale projects', 'Infrastructure']
+    industries: ['Large-scale projects', 'Infrastructure', 'Complex structures']
   },
   {
     id: 'site-support-reconciliation',
     title: 'SITE',
     subtitle: 'SUPPORT',
-    tagline: 'Technical Site Support',
-    shortDesc: 'On-site technical support and quantity reconciliation services',
-    description: `Our responsibility extends beyond delivering reinforcement drawings. We provide continued technical support to ensure detailing is implemented accurately and efficiently on site, bridging the gap between design and construction.`,
+    tagline: 'Construction Support & Reinforcement Reconciliation',
+    shortDesc: 'Technical construction support and reinforcement reconciliation services',
+    description: `Our services extend beyond detailing to provide technical construction support and reinforcement reconciliation. We assist project teams by addressing site queries, reviewing reinforcement installations, and reconciling issued drawings with actual material usage to ensure project accuracy, accountability, and efficiency.`,
     bgImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
     cardImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     features: [
       'Technical support',
-      'Drawing clarifications',
-      'Site visits',
-      'Revision management',
-      'Quantity reconciliation',
-      'Material tracking'
+      'Site query resolution',
+      'Installation review',
+      'Drawing reconciliation',
+      'Material tracking',
+      'Project monitoring'
     ],
     benefits: [
-      'Smooth implementation',
+      'Smooth execution',
       'Reduced delays',
+      'Improved accountability',
       'Cost transparency',
-      'Material control',
-      'Accountability',
-      'Project control'
+      'Better control',
+      'Accurate delivery'
     ],
     standards: ['BS 8666', 'Eurocode 2', 'ACI 318', 'IS Codes'],
     software: ['All platforms'],
@@ -175,7 +175,7 @@ export const servicesData = [
   }
 ];
 
-// Helper function to get service by ID
+// Helper function (unchanged)
 export const getServiceById = (id) => {
   return servicesData.find(service => service.id === id);
 };

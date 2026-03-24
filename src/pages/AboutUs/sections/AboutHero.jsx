@@ -29,12 +29,10 @@ const AboutHero = () => {
       { threshold: 0.1, rootMargin: '0px' }
     );
 
-    // Observe stats
     statRefs.current.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
 
-    // Observe cards
     cardRefs.current.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
@@ -49,14 +47,14 @@ const AboutHero = () => {
       <div className="about-hero-bg">
         <img
           src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-          alt="Modern construction site with steel reinforcement - ARMEX Solutions rebar detailing experts"
+          alt="Modern construction site with steel reinforcement"
           className="about-bg-image"
         />
         <div className="about-overlay"></div>
         
         {/* Animated Particles */}
         <div className="about-particles">
-          {[...Array(15)].map((_, i) => (
+          {[...Array(12)].map((_, i) => (
             <div key={i} className="about-particle" style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -74,7 +72,7 @@ const AboutHero = () => {
 
           <div className="about-label about-slide-in">
             <span className="about-label-line"></span>
-            <span className="about-label-text">GLOBAL REBAR DETAILING EXPERTS</span>
+            <span className="about-label-text">REBAR DETAILING EXPERTS</span>
           </div>
 
           <h1 className="about-heading">
@@ -84,14 +82,12 @@ const AboutHero = () => {
           </h1>
 
           <p className="about-desc about-slide-in">
-            Precision-driven reinforcement detailing and BIM coordination
-            supporting infrastructure and structural projects worldwide.
+            Precision-driven reinforcement detailing supporting infrastructure projects worldwide.
           </p>
 
           <button className="about-btn about-slide-in">
-            <span className="about-btn-text">Explore Our Journey</span>
+            <span className="about-btn-text">Explore Journey</span>
             <FiArrowRight className="about-btn-icon" />
-            <span className="about-btn-glare"></span>
           </button>
 
           {/* STATS GRID */}
@@ -113,7 +109,6 @@ const AboutHero = () => {
                   <h3 className="about-stat-value">{stat.value}</h3>
                   <p className="about-stat-label">{stat.label}</p>
                 </div>
-                <div className="about-stat-glow"></div>
               </div>
             ))}
           </div>
@@ -123,10 +118,10 @@ const AboutHero = () => {
         {/* RIGHT SIDE - Industry Cards */}
         <div className="about-right about-fade-in-right">
           {[
-            { icon: FiTool, title: 'Structural', desc: 'High-rise, bridges, industrial', delay: 0.2 },
-            { icon: FiHome, title: 'Residential', desc: 'Apartments, villas, housing', delay: 0.3 },
-            { icon: FiGrid, title: 'Commercial', desc: 'Offices, malls, complexes', delay: 0.4 },
-            { icon: FiActivity, title: 'Infrastructure', desc: 'Metro, tunnels, ports', delay: 0.5 }
+            { icon: FiTool, title: 'Structural', desc: 'High-rise, bridges', delay: 0.2 },
+            { icon: FiHome, title: 'Residential', desc: 'Apartments, villas', delay: 0.3 },
+            { icon: FiGrid, title: 'Commercial', desc: 'Offices, malls', delay: 0.4 },
+            { icon: FiActivity, title: 'Infrastructure', desc: 'Metro, tunnels', delay: 0.5 }
           ].map((card, index) => (
             <div 
               key={index}
@@ -137,8 +132,6 @@ const AboutHero = () => {
               <card.icon className="about-card-icon" />
               <h4 className="about-card-title">{card.title}</h4>
               <p className="about-card-desc">{card.desc}</p>
-              <div className="about-card-shine"></div>
-              <div className="about-card-border"></div>
             </div>
           ))}
         </div>

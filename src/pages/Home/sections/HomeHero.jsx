@@ -127,18 +127,9 @@ const HomeHero = () => {
                     {slide.button1}
                     <span className="btn-arrow">→</span>
                   </button>
-                  <button className="btn-secondary">
-                    {slide.button2}
-                  </button>
                 </div>
 
                 {/* Industry Standards */}
-                <div className="standards-row">
-                  <span className="standard-item">BS 8666</span>
-                  <span className="standard-item">ACI 318</span>
-                  <span className="standard-item">EUROCODE 2</span>
-                  <span className="standard-item">ISO 9001</span>
-                </div>
               </div>
 
               {/* Slide Counter */}

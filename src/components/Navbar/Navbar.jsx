@@ -1,146 +1,104 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { 
-  HiOutlineMenuAlt3, 
+import {
+  HiOutlineMenuAlt3,
   HiOutlineX,
   HiHome,
   HiInformationCircle,
   HiOutlineCube,
-  HiOutlinePhone
+  HiOutlinePhone,
 } from "react-icons/hi";
 import "./Navbar.css";
 
+const navLinks = [
+  { path: "/",           label: "Home",       icon: <HiHome /> },
+  { path: "/about-us",   label: "About Us",   icon: <HiInformationCircle /> },
+  { path: "/services",   label: "Services",   icon: <HiOutlineCube /> },
+  { path: "/contact-us", label: "Contact Us", icon: <HiOutlinePhone /> },
+];
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  // Scroll effect
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  useEffect(() => { setMenuOpen(false); }, [location]);
 
-  // Close mobile menu on route change
-  useEffect(() => setMenuOpen(false), [location]);
-
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "unset";
-    return () => { document.body.style.overflow = "unset"; };
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const closeMenu = () => setMenuOpen(false);
-
-  const navLinks = [
-    { path: "/", label: "Home", icon: <HiHome /> },
-    { path: "/about-us", label: "About Us", icon: <HiInformationCircle /> },
-    { path: "/services", label: "Services", icon: <HiOutlineCube /> },
-    { path: "/contact-us", label: "Contact Us", icon: <HiOutlinePhone /> }
-  ];
-
   return (
-    <>
-      <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
-        <div className="navbar-container">
+    <header className="navbar">
+      <div className="navbar__inner">
 
-          {/* Desktop Logo */}
-          <div className="navbar-logo desktop-logo">
-            <Link to="/" className="logo-link">
-              <img
-                src="/logo.svg"
-                alt="Armex Business Solutions Logo"
-                className="logo-img"
-                width="180"
-                height="50"
-                loading="eager"
-              />
+        {/* Logo — left */}
+        <Link to="/" className="navbar__logo" aria-label="Armex home">
+          <img
+            src="/logo.svg"
+            alt="Armex Business Solutions"
+            className="navbar__logo-img"
+            width="160"
+            height="44"
+            loading="eager"
+          />
+        </Link>
+
+        {/* Desktop nav — right */}
+        <nav className="navbar__links" aria-label="Primary navigation">
+          {navLinks.map(({ path, label, icon }) => (
+            <Link
+              key={path}
+              to={path}
+              className={`navbar__link${location.pathname === path ? " navbar__link--active" : ""}`}
+            >
+              <span className="navbar__link-icon" aria-hidden="true">{icon}</span>
+              {label}
+              <span className="navbar__link-bar" aria-hidden="true" />
             </Link>
-          </div>
+          ))}
+        </nav>
 
-          {/* Desktop Menu */}
-          <nav className="nav-menu nav-menu-right desktop-menu">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`nav-link ${location.pathname === link.path ? "active" : ""}`}
-              >
-                <span className="nav-icon">{link.icon}</span>
-                <span className="nav-label">{link.label}</span>
-                <span className="nav-indicator"></span>
-              </Link>
-            ))}
-          </nav>
+        {/* Hamburger — mobile only */}
+        <button
+          className="navbar__hamburger"
+          onClick={() => setMenuOpen(v => !v)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+        >
+          {menuOpen ? <HiOutlineX /> : <HiOutlineMenuAlt3 />}
+        </button>
+      </div>
 
-          {/* Mobile Toggle */}
-          <button
-            className={`mobile-toggle ${menuOpen ? "active" : ""}`}
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            <div className="toggle-icon">
-              {menuOpen ? <HiOutlineX /> : <HiOutlineMenuAlt3 />}
-            </div>
-          </button>
-        </div>
+      {/* Gold bottom accent line */}
+      <div className="navbar__gold-line" aria-hidden="true" />
 
-        {/* Mobile Menu Overlay */}
-        <div
-          className={`mobile-menu-overlay ${menuOpen ? "active" : ""}`}
-          onClick={closeMenu}
-        ></div>
+      {/* Mobile overlay */}
+      <div
+        className={`mobile-overlay${menuOpen ? " mobile-overlay--open" : ""}`}
+        onClick={() => setMenuOpen(false)}
+        aria-hidden="true"
+      />
 
-        {/* Mobile Menu */}
-        <div className={`mobile-menu ${menuOpen ? "active" : ""}`}>
-          <div className="mobile-menu-header">
-            
-            {/* Mobile Logo */}
-            <div className="mobile-logo">
-              <img
-                src="/logo.svg"
-                alt="Armex Business Solutions Logo"
-                className="logo-img"
-                width="150"
-                height="42"
-              />
-            </div>
-
-            <button className="mobile-close" onClick={closeMenu}>
-              <HiOutlineX />
-            </button>
-          </div>
-
-          <nav className="mobile-nav">
-            {navLinks.map((link, index) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`mobile-nav-link ${
-                  location.pathname === link.path ? "active" : ""
-                }`}
-                onClick={closeMenu}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <span className="mobile-nav-icon">{link.icon}</span>
-                <span className="mobile-nav-label">{link.label}</span>
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </header>
-
-      <div className="navbar-spacer"></div>
-      <div className="navbar-bottom-line"></div>
-    </>
+      {/* Mobile drawer */}
+      <aside className={`mobile-drawer${menuOpen ? " mobile-drawer--open" : ""}`}>
+        <nav className="mobile-drawer__nav">
+          {navLinks.map(({ path, label, icon }, i) => (
+            <Link
+              key={path}
+              to={path}
+              className={`mobile-drawer__link${location.pathname === path ? " mobile-drawer__link--active" : ""}`}
+              onClick={() => setMenuOpen(false)}
+              style={{ "--i": i }}
+            >
+              <span className="mobile-drawer__icon" aria-hidden="true">{icon}</span>
+              {label}
+            </Link>
+          ))}
+        </nav>
+      </aside>
+    </header>
   );
 };
 
 export default Navbar;
-
-
-
-
-

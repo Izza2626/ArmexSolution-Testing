@@ -10,8 +10,8 @@ const HomeWhyUs = () => {
 
   const stats = [
     { number: "10+", label: "Years Experience", delay: 0.3 },
-    { number: "500+", label: "Projects Completed", delay: 0.4 },
-    { number: "20+", label: "Countries Served", delay: 0.5 },
+    { number: "500+", label: "Projects", delay: 0.4 },
+    { number: "10+", label: "Countries Served", delay: 0.5 },
     { number: "99.9%", label: "Accuracy Rate", delay: 0.6 }
   ];
 
@@ -38,12 +38,14 @@ const HomeWhyUs = () => {
           >
             <span className="homeWhyUs-tag">WHY CHOOSE US</span>
             <h2 className="homeWhyUs-title">
-              Engineering Excellence <span>You Can Trust</span>
+              Technology-Integrated <span>Reinforcement Solutions</span>
             </h2>
             <p className="homeWhyUs-description">
-              With over a decade of experience in rebar detailing, we've built a reputation 
-              for precision, reliability, and innovation. Our commitment to quality ensures 
-              your projects are built on a solid foundation.
+              Leveraging advanced BIM and reinforcement detailing technologies, we develop reinforcement deliverables that align with structural design intent, fabrication requirements, and site execution needs.
+            </p>
+            <br />
+            <p className="homeWhyUs-description">
+              Our BIM-integrated workflow reduces RFIs, improves coordination, and enhances construction efficiency.
             </p>
           </motion.div>
 

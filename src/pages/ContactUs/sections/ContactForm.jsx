@@ -52,20 +52,20 @@ const ContactForm = () => {
   const contactInfo = [
     {
       icon: <FiMapPin />,
-      title: "Visit Us",
+      title: "Corporate Office",
       line1: "Chennai, Tamil Nadu, India - 600001",
       color: "#C9A22D"
     },
     {
       icon: <FiMail />,
-      title: "Email Us",
+      title: "Mail Us",
       line1: "admin@armexsolutions.com",
       link: "mailto:admin@armexsolutions.com"
     },
     {
       icon: <FiPhone />,
       title: "Call Us",
-      line1: "+91-98400 00000",
+      line1: "+91 93427 61826",
       link: "tel:+919840000000"
     },
     {
@@ -143,7 +143,7 @@ const ContactForm = () => {
           {/* Right - Form */}
           <div className="cf-form-wrapper">
             <div className="cf-form-card">
-              <h3 className="cf-form-title">Send us a Message</h3>
+              <p className="cf-form-title">Our Experts Can Help You Get the Best Out of Our Your Business</p>
               
               {formStatus.submitted ? (
                 <div className="cf-success">
