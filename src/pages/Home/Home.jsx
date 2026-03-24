@@ -7,7 +7,8 @@ import HomeStandards from './sections/HomeStandards';
 import HomeWhyUs from './sections/HomeWhyUs';
 import HomeServices from './sections/HomeServices';
 import HomeTestimonials from './sections/HomeTestimonials';
-import WhatSetsUsApart from './sections/Whatsetsusapart';
+import WhatsApart from './sections/WhatsApart';
+
 
 
 const Home = () => {
@@ -47,7 +48,7 @@ const Home = () => {
       <HomeServices/>
       <HomeStandards/>
       <HomeTestimonials/>
-      <WhatSetsUsApart/>
+      <WhatsApart/>
     </>
   );
 };

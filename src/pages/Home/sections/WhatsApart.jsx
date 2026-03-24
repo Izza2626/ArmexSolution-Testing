@@ -10,7 +10,7 @@ import {
   FiShield,
   FiZap
 } from 'react-icons/fi';
-
+import '../sections/WhatsApart.css'
 
 const features = [
   {
@@ -67,7 +67,7 @@ function polarToXY(angleDeg, r) {
   };
 }
 
-export default function WhatSetsUsApart() {
+export default function WhatsApart() {
   const [active, setActive] = useState(0);
   const [anim, setAnim] = useState(false);
   const R = 38;
