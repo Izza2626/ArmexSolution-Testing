@@ -10,7 +10,7 @@ import {
   FiShield,
   FiZap
 } from 'react-icons/fi';
-import './WhatSetsUsApart.css';
+
 
 const features = [
   {
