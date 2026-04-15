@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   FiTarget, 
   FiGlobe, 
@@ -77,6 +77,21 @@ export default function WhatsApart() {
     setActive(i);
     setTimeout(() => setAnim(false), 250);
   };
+
+  /* ✅ AUTO ROTATION (ADDED ONLY THIS) */
+useEffect(() => {
+  const interval = setInterval(() => {
+    setAnim(true);
+
+    setActive((prev) => {
+      return prev === features.length - 1 ? 0 : prev + 1;
+    });
+
+    setTimeout(() => setAnim(false), 250);
+  }, 3000);
+
+  return () => clearInterval(interval);
+}, []);
 
   const item = features[active];
 

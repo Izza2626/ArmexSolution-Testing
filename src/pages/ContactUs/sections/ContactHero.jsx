@@ -1,6 +1,7 @@
 import React from "react";
 import { FiArrowDown } from "react-icons/fi";
 import "./ContactHero.css";
+import ContactH from '../../../assets/images/Contact/ContactHero.png'
 
 const ContactHero = () => {
   return (
@@ -8,7 +9,7 @@ const ContactHero = () => {
       {/* Background with Creative Elements */}
       <div className="c-hero-bg">
         <img 
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+          src={ContactH}
           alt="Contact ARMEX Solutions"
         />
         <div className="c-hero-overlay"></div>
@@ -37,11 +38,6 @@ const ContactHero = () => {
           <div className="c-stat">
             <span className="c-stat-number">24/7</span>
             <span className="c-stat-label">Support</span>
-          </div>
-          <div className="c-stat-divider"></div>
-          <div className="c-stat">
-            <span className="c-stat-number">2h</span>
-            <span className="c-stat-label">Response</span>
           </div>
           <div className="c-stat-divider"></div>
           <div className="c-stat">

@@ -17,7 +17,7 @@ const AboutUs = () => {
       <VisionMission/>
       <QualityProcess/>
       <OurExpertise/>
-      <OurTeam/>
+      {/* <OurTeam/> */}
       <FAQ/>
     </div>
   )

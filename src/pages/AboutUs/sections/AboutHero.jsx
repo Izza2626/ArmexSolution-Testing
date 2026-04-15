@@ -1,17 +1,17 @@
 import React, { useEffect, useRef } from 'react';
 import {
   FiAward,
-  FiGlobe,
-  FiUsers,
-  FiClock,
+  FiCheckCircle,
   FiTool,
+  FiHeadphones,
   FiHome,
   FiGrid,
-  FiActivity,
+  FiMap,
+  FiSettings,
   FiArrowRight
 } from "react-icons/fi";
-
 import "./AboutHero.css";
+import AboutH from '../../../assets/images/About/AboutHero.png'
 
 const AboutHero = () => {
   const statRefs = useRef([]);
@@ -46,7 +46,7 @@ const AboutHero = () => {
       {/* Background with Parallax Effect */}
       <div className="about-hero-bg">
         <img
-          src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          src={AboutH}
           alt="Modern construction site with steel reinforcement"
           className="about-bg-image"
         />
@@ -72,17 +72,17 @@ const AboutHero = () => {
 
           <div className="about-label about-slide-in">
             <span className="about-label-line"></span>
-            <span className="about-label-text">REBAR DETAILING EXPERTS</span>
+            <span className="about-label-text">GLOBAL REBAR DETAILING EXPERTS</span>
           </div>
 
           <h1 className="about-heading">
-            <span className="about-heading-line about-heading-line-1">Engineering</span>
-            <span className="about-heading-line about-heading-line-2 about-text-gold">Precision Structures</span>
-            <span className="about-heading-line about-heading-line-3">Worldwide</span>
+            <span className="about-heading-line about-heading-line-1">Transforming Design</span>
+            <span className="about-heading-line about-heading-line-2 about-text-gold">into</span>
+            <span className="about-heading-line about-heading-line-3">Buildable Reinforcement</span>
           </h1>
 
           <p className="about-desc about-slide-in">
-            Precision-driven reinforcement detailing supporting infrastructure projects worldwide.
+            Advanced rebar detailing and BIM modelling that improves constructability, coordination, and project efficiency.
           </p>
 
           <button className="about-btn about-slide-in">
@@ -94,9 +94,9 @@ const AboutHero = () => {
           <div className="about-stats">
             {[
               { icon: FiAward, value: '10+', label: 'Years', delay: 0.1 },
-              { icon: FiGlobe, value: '15+', label: 'Countries', delay: 0.2 },
-              { icon: FiUsers, value: '500+', label: 'Projects', delay: 0.3 },
-              { icon: FiClock, value: '24/7', label: 'Support', delay: 0.4 }
+              { icon: FiCheckCircle, value: '99%', label: 'On-Time Delivery', delay: 0.2 },
+              { icon: FiTool, value: '100%', label: 'Buildability', delay: 0.3 },
+              { icon: FiHeadphones, value: '24/7', label: 'Support', delay: 0.4 }
             ].map((stat, index) => (
               <div 
                 key={index}
@@ -118,10 +118,10 @@ const AboutHero = () => {
         {/* RIGHT SIDE - Industry Cards */}
         <div className="about-right about-fade-in-right">
           {[
-            { icon: FiTool, title: 'Structural', desc: 'High-rise, bridges', delay: 0.2 },
-            { icon: FiHome, title: 'Residential', desc: 'Apartments, villas', delay: 0.3 },
-            { icon: FiGrid, title: 'Commercial', desc: 'Offices, malls', delay: 0.4 },
-            { icon: FiActivity, title: 'Infrastructure', desc: 'Metro, tunnels', delay: 0.5 }
+            { icon: FiHome, title: 'Residential', desc: 'Apartments, villas, High-Rise Towers', delay: 0.3 },
+            { icon: FiGrid, title: 'Commercial', desc: 'Office Buildings, Malls, Hotels', delay: 0.4 },
+            { icon: FiMap, title: 'Infrastructure', desc: 'Bridges, Metro, Highways', delay: 0.5 },
+            { icon: FiSettings, title: 'Industrial', desc: 'Factories, Warehouses, Manufacturing Plants', delay: 0.6 },
           ].map((card, index) => (
             <div 
               key={index}

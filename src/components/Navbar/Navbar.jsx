@@ -35,14 +35,14 @@ const Navbar = () => {
 
         {/* Logo — left */}
         <Link to="/" className="navbar__logo" aria-label="Armex home">
-          <img
-            src={NavLogo}
-            alt="Armex Business Solutions"
-            className="navbar__logo-img"
-            width="160"
-            height="44"
-            loading="eager"
-          />
+          <div className="navbar__logo-box">
+            <img
+              src={NavLogo}
+              alt="Armex Business Solutions"
+              className="navbar__logo-img"
+              loading="eager"
+            />
+          </div>
         </Link>
 
         {/* Desktop nav — right */}
@@ -83,6 +83,15 @@ const Navbar = () => {
 
       {/* Mobile drawer */}
       <aside className={`mobile-drawer${menuOpen ? " mobile-drawer--open" : ""}`}>
+        {/* Close button inside drawer */}
+        <button
+          className="mobile-drawer__close"
+          onClick={() => setMenuOpen(false)}
+          aria-label="Close menu"
+        >
+          <HiOutlineX />
+        </button>
+        
         <nav className="mobile-drawer__nav">
           {navLinks.map(({ path, label, icon }, i) => (
             <Link

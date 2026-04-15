@@ -1,13 +1,19 @@
 import React from "react";
 import "./OurPresence.css";
+import AboutMap from '../../../assets/images/About/AboutMap.png'
 
-const OurPresence = () => {
+const OurPresence = ({ mapImage }) => {
   const certifications = [
-    { name: "ISO 9001:2015" },
-    { name: "BS 8666" },
-    { name: "ACI 318" },
-    { name: "Eurocode 2" }
+    { name: "UK" },
+    { name: "USA" },
+    { name: "UAE" },
+    { name: "KSA" },
+    { name: "INDIA" },
   ];
+
+  // Default stylish world map image (high-res illustration)
+  const defaultMapImage = AboutMap;
+  const imageSrc = mapImage || defaultMapImage;
 
   return (
     <section className="op-section">
@@ -21,36 +27,18 @@ const OurPresence = () => {
           </h2>
         </div>
 
-        {/* Map with Overlay */}
+        {/* Stylish Map Image with Animations & Effects */}
         <div className="op-map-real">
-
-          <iframe
-            title="global-map"
-            src="https://www.google.com/maps?q=Middle+East&z=3&output=embed"
-            loading="lazy"
-          ></iframe>
-
-          <div className="op-map-overlay">
-
-            {/* UAE */}
-            <div className="op-map-marker op-uae">
-              <span className="op-dot"></span>
-              <span className="op-label">UAE</span>
-            </div>
-
-            {/* Saudi */}
-            <div className="op-map-marker op-ksa">
-              <span className="op-dot"></span>
-              <span className="op-label">KSA</span>
-            </div>
-
-            {/* India */}
-            <div className="op-map-marker op-india">
-              <span className="op-dot op-dot-hq"></span>
-              <span className="op-label">India</span>
-            </div>
-
+          <div className="op-map-image-wrapper">
+            <img
+              src={imageSrc}
+              alt="Stylish world map showing global presence"
+              className="op-map-image"
+              loading="lazy"
+            />
           </div>
+          {/* Scanning beam effect overlay for "real functioning" feel */}
+          <div className="op-scan-overlay"></div>
         </div>
 
         {/* Certifications */}

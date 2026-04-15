@@ -1,133 +1,284 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .vm-section {
-  padding: 80px 0;
-  background: #f8fafc;
+  padding: 64px 0;
+  background: #ffffff;
   font-family: 'Inter', sans-serif;
 }
 
 .vm-container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-/* HEADER */
-
+/* ========== COMPACT HEADER ========== */
 .vm-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.vm-badge {
-  font-size: 11px;
-  font-weight: 600;
-  color: #C9A22D;
-  background: rgba(201,162,45,0.1);
-  padding: 6px 14px;
-  border-radius: 20px;
-  display: inline-block;
-  margin-bottom: 12px;
-}
-
-.vm-title {
-  font-size: 32px;
-  font-weight: 600;
-  color: #1e293b;
-  margin-bottom: 10px;
-}
-
-.vm-title span {
-  color: #C9A22D;
-}
-
-.vm-desc {
-  font-size: 14px;
-  color: #64748b;
-}
-
-/* GRID */
-
-.vm-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-}
-
-/* CARD */
-
-.vm-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  padding: 30px;
-  border-radius: 16px;
-  transition: 0.3s ease;
-}
-
-.vm-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  border-color: #C9A22D;
-}
-
-/* ICON */
-
-.vm-icon {
-  width: 50px;
-  height: 50px;
-  background: rgba(201,162,45,0.1);
-  color: #C9A22D;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  font-size: 20px;
-  margin-bottom: 15px;
+  gap: 20px;
+  margin-bottom: 56px;
 }
 
-/* TEXT */
-
-.vm-card h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #1e293b;
+.vm-header-line {
+  width: 40px;
+  height: 1px;
+  background: #e2e8f0;
 }
 
-.vm-card p {
-  font-size: 14px;
-  color: #475569;
-  line-height: 1.7;
-  margin-bottom: 15px;
+.vm-header-text {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #94a3b8;
 }
 
-/* POINTS */
-
-.vm-points {
+/* ========== HORIZONTAL SPLIT LAYOUT ========== */
+.vm-split {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  align-items: stretch;
+  gap: 0;
+  position: relative;
 }
 
-.vm-points span {
-  font-size: 13px;
-  color: #334155;
+/* Each side */
+.vm-side {
+  flex: 1;
+  padding: 40px 32px;
+  position: relative;
+  transition: all 0.35s ease;
+}
+
+/* Vision side */
+.vision-side {
+  background: #ffffff;
+  border-right: 1px solid transparent;
+}
+
+/* Mission side */
+.mission-side {
+  background: #ffffff;
+  border-left: 1px solid transparent;
+}
+
+/* Hover effect - subtle lift and border reveal */
+.vm-side:hover {
+  background: #fefcf8;
+  transform: translateY(-4px);
+}
+
+.vision-side:hover {
+  border-right-color: rgba(201, 162, 45, 0.3);
+}
+
+.mission-side:hover {
+  border-left-color: rgba(201, 162, 45, 0.3);
+}
+
+/* Icon styling */
+.vm-side-icon {
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.vm-side-icon svg {
+  width: 34px;
+  height: 34px;
+  color: #C9A22D;
+  stroke-width: 1.5;
+  transition: all 0.3s ease;
+}
+
+.vm-side:hover .vm-side-icon svg {
+  transform: scale(1.08);
+}
+
+/* Label */
+.vm-side-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #C9A22D;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+/* Heading */
+.vm-side-heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.35;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+/* Text */
+.vm-side-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 24px;
+}
+
+/* Bottom marker - animated */
+.vm-side-marker {
+  width: 30px;
+  height: 2px;
+  background: #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.vm-side:hover .vm-side-marker {
+  width: 50px;
+  background: #C9A22D;
+}
+
+/* ========== VERTICAL DIVIDER WITH DIAMOND ========== */
+.vm-divider-vertical {
+  width: 1px;
+  background: linear-gradient(to bottom, #e2e8f0, #e2e8f0);
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  margin: 20px 0;
 }
 
-.vm-points svg {
-  color: #C9A22D;
+.vm-diamond {
+  width: 8px;
+  height: 8px;
+  background: #C9A22D;
+  transform: rotate(45deg);
+  position: absolute;
+  transition: all 0.3s ease;
 }
 
-/* RESPONSIVE */
+.vm-split:hover .vm-diamond {
+  transform: rotate(45deg) scale(1.3);
+  background: #C9A22D;
+}
+
+/* ========== BOTTOM ACCENT ========== */
+.vm-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 48px;
+}
+
+.vm-bottom-dot {
+  width: 4px;
+  height: 4px;
+  background: #cbd5e1;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.vm-bottom:hover .vm-bottom-dot:nth-child(1) {
+  background: #C9A22D;
+  transform: scale(1.5);
+}
+
+.vm-bottom:hover .vm-bottom-dot:nth-child(2) {
+  background: #C9A22D;
+  transform: scale(1.8);
+}
+
+.vm-bottom:hover .vm-bottom-dot:nth-child(3) {
+  background: #C9A22D;
+  transform: scale(1.5);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .vm-side-heading {
+    font-size: 20px;
+  }
+  
+  .vm-side {
+    padding: 32px 24px;
+  }
+}
 
 @media (max-width: 768px) {
-  .vm-grid {
-    grid-template-columns: 1fr;
+  .vm-section {
+    padding: 48px 0;
   }
+  
+  .vm-split {
+    flex-direction: column;
+  }
+  
+  .vm-divider-vertical {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+    background: linear-gradient(to right, #e2e8f0, #e2e8f0);
+  }
+  
+  .vm-diamond {
+    display: none;
+  }
+  
+  .vision-side {
+    border-right: none;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .mission-side {
+    border-left: none;
+  }
+  
+  .vm-side:hover {
+    transform: translateY(-2px);
+  }
+  
+  .vm-side-heading {
+    font-size: 20px;
+  }
+  
+  .vm-header {
+    margin-bottom: 40px;
+  }
+}
 
-  .vm-title {
-    font-size: 26px;
+@media (max-width: 480px) {
+  .vm-container {
+    padding: 0 20px;
+  }
+  
+  .vm-side {
+    padding: 28px 20px;
+  }
+  
+  .vm-side-heading {
+    font-size: 18px;
+  }
+  
+  .vm-side-text {
+    font-size: 13px;
+  }
+  
+  .vm-side-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .vm-header-line {
+    width: 24px;
+  }
+  
+  .vm-header-text {
+    font-size: 10px;
+    letter-spacing: 3px;
   }
 }

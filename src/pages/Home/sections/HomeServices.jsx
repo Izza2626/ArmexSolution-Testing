@@ -4,8 +4,8 @@ import "./HomeServices.css";
 
 const services = [
   {
-    title: "Rebar Detailing",
-    subtitle: "Precision reinforcement detailing",
+    title: "Shop Drawings",
+    subtitle: "Constructible RO drawings",
     image:
       "https://images.unsplash.com/photo-1601134467661-3d775b999c8b?q=80&w=1200&auto=format&fit=crop",
   },
@@ -16,8 +16,8 @@ const services = [
       "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    title: "Shop Drawings",
-    subtitle: "Constructible RC drawings",
+    title: "Bar Bending Schedule",
+    subtitle: "Fabrication ready BBS",
     image:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop",
   },
@@ -29,10 +29,27 @@ const services = [
   },
 ];
 
+// 🔥 Reusable Card Component
+const ServiceCard = ({ data, className = "" }) => (
+  <motion.div className={`serviceCard ${className}`} whileHover={{ scale: 1.02 }}>
+    <img src={data.image} alt="" />
+
+    <div className="serviceOverlay">
+      <div>
+        <h3>{data.title}</h3>
+        <p>{data.subtitle}</p>
+      </div>
+
+      <button className="serviceBtn">
+        <FiArrowUpRight />
+      </button>
+    </div>
+  </motion.div>
+);
+
 const HomeServices = () => {
   return (
     <section className="homeServices">
-
       <div className="homeServices-container">
 
         <div className="homeServices-header">
@@ -43,84 +60,16 @@ const HomeServices = () => {
         <div className="homeServices-layout">
 
           {/* Large Card */}
-          <motion.div
-            className="serviceCard largeCard"
-            whileHover={{ scale: 1.02 }}
-          >
-            <img src={services[0].image} alt="" />
-
-            <div className="serviceOverlay">
-              <div>
-                <h3>{services[0].title}</h3>
-                <p>{services[0].subtitle}</p>
-              </div>
-
-              <button className="serviceBtn">
-                <FiArrowUpRight />
-              </button>
-            </div>
-          </motion.div>
+          <ServiceCard data={services[0]} className="largeCard" />
 
           {/* Right Grid */}
           <div className="smallGrid">
-
-            <motion.div
-              className="serviceCard"
-              whileHover={{ scale: 1.02 }}
-            >
-              <img src={services[1].image} alt="" />
-
-              <div className="serviceOverlay">
-                <div>
-                  <h3>{services[1].title}</h3>
-                  <p>{services[1].subtitle}</p>
-                </div>
-
-                <button className="serviceBtn">
-                  <FiArrowUpRight />
-                </button>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="serviceCard"
-              whileHover={{ scale: 1.02 }}
-            >
-              <img src={services[2].image} alt="" />
-
-              <div className="serviceOverlay">
-                <div>
-                  <h3>{services[2].title}</h3>
-                  <p>{services[2].subtitle}</p>
-                </div>
-
-                <button className="serviceBtn">
-                  <FiArrowUpRight />
-                </button>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="serviceCard wideCard"
-              whileHover={{ scale: 1.02 }}
-            >
-              <img src={services[3].image} alt="" />
-
-              <div className="serviceOverlay">
-                <div>
-                  <h3>{services[3].title}</h3>
-                  <p>{services[3].subtitle}</p>
-                </div>
-
-                <button className="serviceBtn">
-                  <FiArrowUpRight />
-                </button>
-              </div>
-            </motion.div>
-
+            <ServiceCard data={services[1]} />
+            <ServiceCard data={services[2]} />
+            <ServiceCard data={services[3]} className="wideCard" />
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
   );

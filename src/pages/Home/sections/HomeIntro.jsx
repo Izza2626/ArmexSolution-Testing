@@ -2,6 +2,10 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import './HomeIntro.css';
 
+import HomeIntro1 from '../../../assets/images/Home/HomeIntro1.jpg'
+import HomeIntro2 from '../../../assets/images/Home/HomeIntro2.jpg'
+import HomeIntro3 from '../../../assets/images/Home/HomeIntro3.jpg'
+
 const HomeIntro = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -26,7 +30,7 @@ const HomeIntro = () => {
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rebar construction" />
+              <img src={HomeIntro1} alt="Rebar construction" />
               <div className="homeIntro-imageOverlay"></div>
             </motion.div>
             <motion.div 
@@ -34,14 +38,14 @@ const HomeIntro = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Steel reinforcement" />
+              <img src={HomeIntro2} alt="Steel reinforcement" />
             </motion.div>
             <motion.div 
               className="homeIntro-collageItem homeIntro-collageSmall"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Construction worker" />
+              <img src={HomeIntro3} alt="Construction worker" />
             </motion.div>
           </div>
         </motion.div>
@@ -53,14 +57,6 @@ const HomeIntro = () => {
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <motion.span 
-            className="homeIntro-badge"
-            initial={{ opacity: 0, x: -20 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.3, duration: 0.5 }}
-          >
-            SINCE 2010
-          </motion.span>
           
           <motion.h2 
             className="homeIntro-title"
@@ -90,7 +86,7 @@ const HomeIntro = () => {
             transition={{ delay: 0.6, duration: 0.6 }}
           >
             <div className="homeIntro-miniStat">
-              <span className="homeIntro-miniNumber" style={{ color: "#C9A22D" }}>500+</span>
+              <span className="homeIntro-miniNumber" style={{ color: "#C9A22D" }}>100+</span>
               <span className="homeIntro-miniLabel">Projects</span>
             </div>
             <div className="homeIntro-miniStat">

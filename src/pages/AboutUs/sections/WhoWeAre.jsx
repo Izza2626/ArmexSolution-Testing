@@ -34,17 +34,14 @@ const WhoWeAre = () => {
         <div className="wwa-content">
           <span className="wwa-subtitle">WHO WE ARE</span>
           <h2 className="wwa-title">
-            Precision in <span>Reinforcement.</span> Confidence in <span>Construction.</span>
+            Engineering Expertise  <span>behind</span> Stronger Structures.
           </h2>
           <p className="wwa-desc">
-            At ARMEX Solutions India, we specialize in delivering precise and buildable 
-            reinforcement detailing services that empower construction teams worldwide. 
+            At ARMEX Solutions India, we specialize in delivering precise and buildable reinforcement detailing services that empower construction teams worldwide.
           </p>
           <br />
           <p className="wwa-desc">
-            Founded with a vision to raise industry standards, we combine technical depth, 
-            global code compliance, and advanced BIM-driven workflows to provide detailing 
-            solutions that meet the highest levels of accuracy and efficiency.
+            Founded with a vision to raise industry standards, we combine technical depth, global code compliance, and advanced BIM-driven workflows to provide detailing solutions that meet the highest levels of accuracy and efficiency.
           </p>
         </div>
 

@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import './HomeWhyUs.css';
 
+import HomeWhy from '../../../assets/images/Home/HomeWhy.jpg'
+
 const HomeWhyUs = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -10,7 +12,7 @@ const HomeWhyUs = () => {
 
   const stats = [
     { number: "10+", label: "Years Experience", delay: 0.3 },
-    { number: "500+", label: "Projects", delay: 0.4 },
+    { number: "100+", label: "Projects", delay: 0.4 },
     { number: "10+", label: "Countries Served", delay: 0.5 },
     { number: "99.9%", label: "Accuracy Rate", delay: 0.6 }
   ];
@@ -38,14 +40,14 @@ const HomeWhyUs = () => {
           >
             <span className="homeWhyUs-tag">WHY CHOOSE US</span>
             <h2 className="homeWhyUs-title">
-              Technology-Integrated <span>Reinforcement Solutions</span>
+              Engineering Excellence <span>You Can Trust</span>
             </h2>
             <p className="homeWhyUs-description">
-              Leveraging advanced BIM and reinforcement detailing technologies, we develop reinforcement deliverables that align with structural design intent, fabrication requirements, and site execution needs.
+              With over a decade of experience in rebar detailing, we've built a reputation for precision, reliability, and innovation.
             </p>
             <br />
             <p className="homeWhyUs-description">
-              Our BIM-integrated workflow reduces RFIs, improves coordination, and enhances construction efficiency.
+              Our commitment to quality ensures your projects are built on a solid foundation.
             </p>
           </motion.div>
 

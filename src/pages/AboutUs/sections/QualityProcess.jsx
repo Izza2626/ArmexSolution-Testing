@@ -14,28 +14,28 @@ import './QualityProcess.css';
 const QualityProcess = () => {
   const processSteps = [
     {
-      icon: <FiEye />,
+      image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=70&h=70&fit=crop",
       title: "Code Compliance",
       description: "Every drawing aligned with BS, Eurocode, ACI, ASTM, IS standards",
       color: "#C9A22D",
       step: "01"
     },
     {
-      icon: <FiShield />,
+      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=70&h=70&fit=crop",
       title: "Accuracy Checks",
       description: "Multi-level review system to eliminate errors",
       color: "#0F766E",
       step: "02"
     },
     {
-      icon: <FiTarget />,
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=70&h=70&fit=crop",
       title: "Client-Centric",
       description: "Clear, buildable documentation for smooth approvals",
       color: "#C9A22D",
       step: "03"
     },
     {
-      icon: <FiTrendingUp />,
+      image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=70&h=70&fit=crop",
       title: "Continuous Improvement",
       description: "Regular training and system upgrades",
       color: "#0F766E",
@@ -80,13 +80,13 @@ const QualityProcess = () => {
           </p>
         </div>
 
-        {/* Process Flow */}
+        {/* Process Flow - IMAGES REPLACED HERE */}
         <div className="qp-process">
           {processSteps.map((step, index) => (
             <div key={index} className="qp-process-step">
               <div className="qp-step-number" style={{ background: step.color }}>{step.step}</div>
               <div className="qp-step-icon" style={{ background: `${step.color}15`, borderColor: step.color }}>
-                {step.icon}
+                <img src={step.image} alt={step.title} className="qp-step-img" />
               </div>
               <div className="qp-step-content">
                 <h3>{step.title}</h3>
@@ -102,7 +102,7 @@ const QualityProcess = () => {
           ))}
         </div>
 
-        {/* Quality Pillars */}
+        {/* Quality Pillars - REACT ICONS (unchanged) */}
         <div className="qp-pillars">
           <div className="qp-pillars-header">
             <span className="qp-pillars-subtitle">OUR QUALITY PILLARS</span>

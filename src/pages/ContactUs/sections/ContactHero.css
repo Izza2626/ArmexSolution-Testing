@@ -187,40 +187,820 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .c-hero-title { font-size: 3.5rem; }
-  .c-hero-title span { font-size: 2.8rem; }
+/* ============================================
+   RESPONSIVE DESIGN - ALL SCREEN SIZES
+   ============================================ */
+
+/* XX-Large Devices (1400px and above) */
+@media (min-width: 1400px) {
+  .c-hero {
+    height: 85vh;
+    min-height: 700px;
+    max-height: 1000px;
+  }
+  
+  .c-hero-container {
+    max-width: 1300px;
+    padding: 0 50px;
+  }
+  
+  .c-hero-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    padding: 0.4rem 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .c-hero-title {
+    font-size: 5.5rem;
+  }
+  
+  .c-hero-title span {
+    font-size: 4.2rem;
+  }
+  
+  .c-hero-desc {
+    max-width: 600px;
+    font-size: 1.1rem;
+  }
+  
+  .c-hero-stats {
+    gap: 50px;
+    padding: 25px 40px;
+  }
+  
+  .c-stat {
+    min-width: 100px;
+  }
+  
+  .c-stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .c-stat-label {
+    font-size: 0.75rem;
+  }
+  
+  .c-shape-1 {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .c-shape-2 {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .c-shape-3 {
+    width: 200px;
+    height: 200px;
+  }
 }
 
-@media (max-width: 600px) {
+/* X-Large Devices (1200px to 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .c-hero-title {
+    font-size: 4rem;
+  }
+  
+  .c-hero-title span {
+    font-size: 3.2rem;
+  }
+  
+  .c-shape-1 {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .c-shape-2 {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .c-shape-3 {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* Large Devices (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .c-hero {
+    height: 85vh;
+    min-height: 550px;
+  }
+  
+  .c-hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .c-hero-title span {
+    font-size: 2.8rem;
+  }
+  
+  .c-hero-desc {
+    font-size: 0.95rem;
+  }
+  
+  .c-shape-1 {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .c-shape-2 {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .c-shape-3 {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* Medium Devices (768px to 991px) - Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  .c-hero {
+    height: 85vh;
+    min-height: 520px;
+  }
+  
+  .c-hero-container {
+    padding: 0 40px;
+  }
+  
+  .c-hero-title-block {
+    margin-bottom: 40px;
+  }
+  
+  .c-hero-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 2.5px;
+    padding: 0.25rem 1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .c-hero-title {
+    font-size: 3rem;
+  }
+  
+  .c-hero-title span {
+    font-size: 2.5rem;
+  }
+  
+  .c-hero-desc {
+    font-size: 0.9rem;
+    max-width: 450px;
+  }
+  
+  .c-hero-stats {
+    gap: 25px;
+    padding: 18px 28px;
+  }
+  
+  .c-stat {
+    min-width: 70px;
+  }
+  
+  .c-stat-number {
+    font-size: 1.3rem;
+  }
+  
+  .c-stat-label {
+    font-size: 0.6rem;
+  }
+  
+  .c-shape-1 {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .c-shape-2 {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .c-shape-3 {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Small Devices (576px to 767px) - Large Phones */
+@media (min-width: 576px) and (max-width: 767px) {
   .c-hero {
     height: auto;
     min-height: 90vh;
     padding: 60px 0;
   }
-
-  .c-hero-title { font-size: 2.5rem; }
-  .c-hero-title span { font-size: 2rem; }
-
-  .c-hero-desc {
-    font-size: 0.9rem;
-    padding: 0 20px;
+  
+  .c-hero-container {
+    padding: 0 30px;
   }
+  
+  .c-hero-title-block {
+    margin-bottom: 35px;
+  }
+  
+  .c-hero-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    padding: 0.2rem 0.8rem;
+    margin-bottom: 0.7rem;
+  }
+  
+  .c-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .c-hero-title span {
+    font-size: 2rem;
+  }
+  
+  .c-hero-desc {
+    font-size: 0.85rem;
+    max-width: 400px;
+    padding: 0 15px;
+  }
+  
+  .c-hero-stats {
+    flex-direction: row;
+    gap: 20px;
+    padding: 15px 25px;
+    border-radius: 50px;
+    width: auto;
+  }
+  
+  .c-stat {
+    min-width: 65px;
+  }
+  
+  .c-stat-number {
+    font-size: 1.2rem;
+  }
+  
+  .c-stat-label {
+    font-size: 0.55rem;
+  }
+  
+  .c-stat-divider {
+    display: block;
+    width: 1px;
+    height: 25px;
+  }
+  
+  .c-shape-1 {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .c-shape-2 {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .c-shape-3 {
+    width: 80px;
+    height: 80px;
+  }
+}
 
+/* Extra Small Devices (425px to 575px) */
+@media (min-width: 425px) and (max-width: 575px) {
+  .c-hero {
+    height: auto;
+    min-height: 90vh;
+    padding: 50px 0;
+  }
+  
+  .c-hero-container {
+    padding: 0 25px;
+  }
+  
+  .c-hero-title-block {
+    margin-bottom: 30px;
+  }
+  
+  .c-hero-subtitle {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    padding: 0.2rem 0.7rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .c-hero-title {
+    font-size: 2rem;
+  }
+  
+  .c-hero-title span {
+    font-size: 1.6rem;
+  }
+  
+  .c-hero-desc {
+    font-size: 0.8rem;
+    max-width: 350px;
+    padding: 0 10px;
+  }
+  
   .c-hero-stats {
     flex-direction: column;
-    gap: 15px;
-    padding: 20px;
+    gap: 12px;
+    padding: 18px 20px;
     border-radius: 30px;
-    width: 90%;
+    width: 85%;
   }
-
-  .c-stat-divider { display: none; }
-
+  
+  .c-stat-divider {
+    display: none;
+  }
+  
   .c-stat {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-width: auto;
+    text-align: left;
+  }
+  
+  .c-stat-number {
+    font-size: 1.2rem;
+  }
+  
+  .c-stat-label {
+    font-size: 0.6rem;
+  }
+  
+  .c-shape-1 {
+    width: 150px;
+    height: 150px;
+    filter: blur(30px);
+  }
+  
+  .c-shape-2 {
+    width: 100px;
+    height: 100px;
+    filter: blur(30px);
+  }
+  
+  .c-shape-3 {
+    width: 70px;
+    height: 70px;
+    filter: blur(30px);
+  }
+}
+
+/* Small Mobile Devices (375px to 424px) */
+@media (min-width: 375px) and (max-width: 424px) {
+  .c-hero {
+    height: auto;
+    min-height: 92vh;
+    padding: 45px 0;
+  }
+  
+  .c-hero-container {
+    padding: 0 20px;
+  }
+  
+  .c-hero-title-block {
+    margin-bottom: 28px;
+  }
+  
+  .c-hero-subtitle {
+    font-size: 0.6rem;
+    letter-spacing: 1.5px;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .c-hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .c-hero-title span {
+    font-size: 1.4rem;
+  }
+  
+  .c-hero-desc {
+    font-size: 0.75rem;
+    max-width: 300px;
+    padding: 0 10px;
+  }
+  
+  .c-hero-stats {
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 18px;
+    border-radius: 25px;
+    width: 90%;
+  }
+  
+  .c-stat-divider {
+    display: none;
+  }
+  
+  .c-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .c-stat-number {
+    font-size: 1.1rem;
+  }
+  
+  .c-stat-label {
+    font-size: 0.55rem;
+  }
+  
+  .c-shape-1 {
+    width: 130px;
+    height: 130px;
+    filter: blur(25px);
+  }
+  
+  .c-shape-2 {
+    width: 90px;
+    height: 90px;
+    filter: blur(25px);
+  }
+  
+  .c-shape-3 {
+    width: 60px;
+    height: 60px;
+    filter: blur(25px);
+  }
+}
+
+/* Very Small Mobile Devices (320px to 374px) */
+@media (min-width: 320px) and (max-width: 374px) {
+  .c-hero {
+    height: auto;
+    min-height: 95vh;
+    padding: 40px 0;
+  }
+  
+  .c-hero-container {
+    padding: 0 18px;
+  }
+  
+  .c-hero-title-block {
+    margin-bottom: 25px;
+  }
+  
+  .c-hero-subtitle {
+    font-size: 0.55rem;
+    letter-spacing: 1.5px;
+    padding: 0.15rem 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .c-hero-title {
+    font-size: 1.6rem;
+  }
+  
+  .c-hero-title span {
+    font-size: 1.3rem;
+  }
+  
+  .c-hero-desc {
+    font-size: 0.7rem;
+    max-width: 280px;
+    padding: 0 5px;
+  }
+  
+  .c-hero-stats {
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: 25px;
+    width: 95%;
+  }
+  
+  .c-stat-divider {
+    display: none;
+  }
+  
+  .c-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .c-stat-number {
+    font-size: 1rem;
+  }
+  
+  .c-stat-label {
+    font-size: 0.5rem;
+  }
+  
+  .c-shape-1 {
+    width: 110px;
+    height: 110px;
+    filter: blur(20px);
+  }
+  
+  .c-shape-2 {
+    width: 80px;
+    height: 80px;
+    filter: blur(20px);
+  }
+  
+  .c-shape-3 {
+    width: 55px;
+    height: 55px;
+    filter: blur(20px);
+  }
+}
+
+/* Ultra Small Devices (below 320px) */
+@media (max-width: 319px) {
+  .c-hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 35px 0;
+  }
+  
+  .c-hero-container {
+    padding: 0 15px;
+  }
+  
+  .c-hero-title-block {
+    margin-bottom: 22px;
+  }
+  
+  .c-hero-subtitle {
+    font-size: 0.5rem;
+    letter-spacing: 1px;
+    padding: 0.15rem 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .c-hero-title {
+    font-size: 1.4rem;
+  }
+  
+  .c-hero-title span {
+    font-size: 1.1rem;
+  }
+  
+  .c-hero-desc {
+    font-size: 0.65rem;
+    max-width: 260px;
+    padding: 0;
+  }
+  
+  .c-hero-stats {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 14px;
+    border-radius: 20px;
     width: 100%;
   }
+  
+  .c-stat-divider {
+    display: none;
+  }
+  
+  .c-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .c-stat-number {
+    font-size: 0.9rem;
+  }
+  
+  .c-stat-label {
+    font-size: 0.45rem;
+  }
+  
+  .c-shape-1,
+  .c-shape-2,
+  .c-shape-3 {
+    display: none;
+  }
+}
+
+/* ============================================
+   LANDSCAPE MODE OPTIMIZATION
+   ============================================ */
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .c-hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 40px 0;
+  }
+  
+  .c-hero-title-block {
+    margin-bottom: 30px;
+  }
+  
+  .c-hero-title {
+    font-size: 2rem;
+  }
+  
+  .c-hero-title span {
+    font-size: 1.6rem;
+  }
+  
+  .c-hero-desc {
+    font-size: 0.8rem;
+  }
+  
+  .c-hero-stats {
+    flex-direction: row;
+    gap: 20px;
+    padding: 12px 25px;
+    width: auto;
+  }
+  
+  .c-stat {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .c-stat-divider {
+    display: block;
+  }
+  
+  .c-shape-1 {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .c-shape-2 {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .c-shape-3 {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+  .c-hero-title {
+    font-size: 1.6rem;
+  }
+  
+  .c-hero-title span {
+    font-size: 1.3rem;
+  }
+  
+  .c-hero-stats {
+    gap: 15px;
+    padding: 10px 20px;
+  }
+  
+  .c-stat-number {
+    font-size: 1rem;
+  }
+  
+  .c-stat-label {
+    font-size: 0.5rem;
+  }
+}
+
+/* ============================================
+   SEO & ACCESSIBILITY OPTIMIZATIONS
+   ============================================ */
+
+/* Touch target optimization for mobile */
+@media (max-width: 768px) {
+  .c-stat {
+    min-height: 44px;
+  }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .c-hero-bg img,
+  .c-hero-shape,
+  .c-hero-title-block,
+  .c-hero-stats {
+    animation: none !important;
+  }
+  
+  .c-hero-bg img {
+    transform: scale(1);
+  }
+  
+  .c-hero-title-block,
+  .c-hero-stats {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .c-hero-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.95),
+      rgba(0, 0, 0, 0.8)
+    );
+  }
+  
+  .c-hero-subtitle {
+    border: 1px solid rgba(201, 162, 45, 0.8);
+    background: rgba(201, 162, 45, 0.25);
+  }
+  
+  .c-hero-stats {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(201, 162, 45, 0.3);
+  }
+}
+
+/* Dark mode optimization */
+@media (prefers-color-scheme: dark) {
+  .c-hero-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.7)
+    );
+  }
+}
+
+/* Print styles for SEO */
+@media print {
+  .c-hero {
+    height: auto;
+    min-height: auto;
+    background: #f5f5f5;
+    color: #000;
+  }
+  
+  .c-hero-bg,
+  .c-hero-shape,
+  .c-hero-overlay {
+    display: none;
+  }
+  
+  .c-hero-container {
+    position: relative;
+    padding: 20px;
+  }
+  
+  .c-hero-title span {
+    color: #c9a22d;
+  }
+  
+  .c-hero-stats {
+    background: none;
+    border: 1px solid #ddd;
+    backdrop-filter: none;
+  }
+  
+  .c-stat-number {
+    color: #c9a22d;
+  }
+  
+  .c-stat-label {
+    color: #666;
+  }
+  
+  .c-hero-title-block,
+  .c-hero-stats {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* Text readability improvements */
+.c-hero-title,
+.c-hero-desc,
+.c-stat-number,
+.c-stat-label {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure proper background scaling */
+.c-hero-bg img {
+  will-change: transform;
+}
+
+/* Prevent FOUC */
+.c-hero {
+  background-color: #000;
+}
+
+/* Focus styles for accessibility */
+.c-stat:focus {
+  outline: none;
 }

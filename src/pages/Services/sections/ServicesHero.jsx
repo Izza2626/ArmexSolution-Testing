@@ -2,54 +2,61 @@ import { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import "./ServicesHero.css";
 
+import SerHero1 from '../../../assets/images/Service/Service1.jpeg'
+import SerHero2 from '../../../assets/images/Service/Service2.jpg'
+import SerHero3 from '../../../assets/images/Service/Service3.jpeg'
+import SerHero4 from '../../../assets/images/Service/Service4.jpeg'
+import SerHero5 from '../../../assets/images/Service/Service5.jpeg'
+import SerHero6 from '../../../assets/images/Service/Service6.jpg'
+
 const services = [
   {
     title: "3D REBAR",
     subtitle: "MODELLING",
     description:
       "Intelligent 3D reinforcement models with clash detection and constructability validation for complex structures.",
-    bg: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-    card: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    bg: SerHero1,
+    card: SerHero1,
   },
   {
     title: "2D SHOP",
     subtitle: "DRAWINGS",
     description:
       "Fabrication-ready reinforcement shop drawings with clear bar placement, spacing, and bending details.",
-    bg: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-    card: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    bg: SerHero2,
+    card: SerHero2,
   },
   {
     title: "BAR BENDING",
     subtitle: "SCHEDULES",
     description:
       "Accurate bar bending schedules with bar marks, shape codes, cutting lengths, and quantities for fabrication.",
-    bg: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-    card: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    bg: SerHero3,
+    card: SerHero3,
   },
   {
     title: "REBAR",
     subtitle: "ESTIMATION",
     description:
       "Precise rebar quantity takeoffs and weight calculations for project planning and cost management.",
-    bg: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-    card: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    bg: SerHero4,
+    card: SerHero4,
   },
   {
     title: "GA",
     subtitle: "DRAWINGS",
     description:
       "Clear general arrangement drawings showing overall reinforcement layout and structural configuration.",
-    bg: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-    card: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    bg: SerHero5,
+    card: SerHero5,
   },
   {
     title: "SITE",
     subtitle: "SUPPORT",
     description:
       "Technical support for on-site implementation, drawing clarifications, and quantity reconciliation.",
-    bg: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-    card: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    bg: SerHero6,
+    card: SerHero6,
   },
 ];
 

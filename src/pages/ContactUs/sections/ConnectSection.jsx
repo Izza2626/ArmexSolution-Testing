@@ -112,10 +112,6 @@ const ConnectSection = () => {
                 <span className="cn-stat-label">Support</span>
               </div>
               <div className="cn-stat-mini">
-                <span className="cn-stat-number">2h</span>
-                <span className="cn-stat-label">Response</span>
-              </div>
-              <div className="cn-stat-mini">
                 <span className="cn-stat-number">100%</span>
                 <span className="cn-stat-label">Satisfaction</span>
               </div>

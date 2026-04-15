@@ -216,21 +216,35 @@
   box-shadow: 0 5px 15px rgba(201, 162, 45, 0.3);
 }
 
+/* PROCESS FLOW IMAGE STYLES */
 .qp-step-icon {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   margin: 0 auto 20px;
   background: rgba(201, 162, 45, 0.1);
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.qp-step-img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 14px;
   transition: all 0.3s ease;
 }
 
 .qp-process-step:hover .qp-step-icon {
-  transform: scale(1.1) rotate(10deg);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.qp-process-step:hover .qp-step-img {
+  transform: scale(1.05);
 }
 
 .qp-step-content h3 {
@@ -262,6 +276,7 @@
   height: 2px;
   background: linear-gradient(90deg, #C9A22D, #0F766E);
   animation: qpLineFlow 2s linear infinite;
+  background-size: 200% 100%;
 }
 
 @keyframes qpLineFlow {
@@ -282,7 +297,7 @@
   50% { transform: scale(1.5); opacity: 1; }
 }
 
-/* Quality Pillars */
+/* Quality Pillars - React Icons (unchanged) */
 .qp-pillars {
   background: linear-gradient(135deg, rgba(201, 162, 45, 0.05) 0%, rgba(15, 118, 110, 0.05) 100%);
   border-radius: 40px;
@@ -351,7 +366,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   transition: all 0.3s ease;
 }
 
@@ -474,5 +489,15 @@
   
   .qp-statement p {
     font-size: 0.9rem;
+  }
+  
+  .qp-step-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .qp-step-img {
+    width: 48px;
+    height: 48px;
   }
 }

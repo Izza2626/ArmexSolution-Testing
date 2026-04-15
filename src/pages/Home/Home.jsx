@@ -46,8 +46,8 @@ const Home = () => {
       <HomeIntro />
       <HomeWhyUs/>
       <HomeServices/>
-      <HomeStandards/>
-      <HomeTestimonials/>
+      {/* <HomeStandards/> */}
+      {/* <HomeTestimonials/> */}
       <WhatsApart/>
     </>
   );

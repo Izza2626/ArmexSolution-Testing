@@ -1,5 +1,5 @@
 import React from "react";
-import { FiEye, FiTarget, FiCheckCircle } from "react-icons/fi";
+import { FiEye, FiTarget } from "react-icons/fi";
 import "./VisionMission.css";
 
 const VisionMission = () => {
@@ -7,65 +7,64 @@ const VisionMission = () => {
     <section className="vm-section">
       <div className="vm-container">
 
-        {/* HEADER */}
+        {/* COMPACT HEADER - Minimal */}
         <div className="vm-header">
-          <span className="vm-badge">OUR PURPOSE</span>
-          <h2 className="vm-title">
-            Vision <span>&</span> Mission
-          </h2>
-          <p className="vm-desc">
-            Driving excellence in reinforcement detailing through innovation and precision
-          </p>
+          <div className="vm-header-line"></div>
+          <span className="vm-header-text">vision / mission</span>
+          <div className="vm-header-line"></div>
         </div>
 
-        {/* CARDS */}
-        <div className="vm-grid">
+        {/* HORIZONTAL SPLIT LAYOUT - No boxes */}
+        <div className="vm-split">
 
-          {/* VISION */}
-          <div className="vm-card">
-            <div className="vm-icon">
+          {/* VISION SIDE */}
+          <div className="vm-side vision-side">
+            <div className="vm-side-icon">
               <FiEye />
             </div>
-
-            <h3>Our Vision</h3>
-
-            <p>
-              To be a globally recognized leader in reinforcement detailing,
-              delivering precision-driven solutions that strengthen structures
-              and set new benchmarks for quality, accuracy, and compliance.
-              We aim to continuously expand our expertise and technological
-              capabilities to support efficient project execution worldwide.
+            <div className="vm-side-label">01</div>
+            <h3 className="vm-side-heading">
+              Redefining the Future of <br/>Reinforcement Engineering
+            </h3>
+            <p className="vm-side-text">
+              Our vision is to transform the future of construction by delivering innovative 
+              reinforcement engineering solutions that enhance structural strength, efficiency, 
+              and reliability. We strive to become a globally trusted partner in advancing 
+              smarter and more buildable reinforcement systems.
             </p>
-
-            <div className="vm-points">
-              <span><FiCheckCircle /> Global Leadership</span>
-              <span><FiCheckCircle /> Innovation Driven</span>
-              <span><FiCheckCircle /> Industry Standards</span>
-            </div>
+            <div className="vm-side-marker"></div>
           </div>
 
-          {/* MISSION */}
-          <div className="vm-card">
-            <div className="vm-icon">
+          {/* DIVIDER - Animated vertical line */}
+          <div className="vm-divider-vertical">
+            <div className="vm-diamond"></div>
+          </div>
+
+          {/* MISSION SIDE */}
+          <div className="vm-side mission-side">
+            <div className="vm-side-icon">
               <FiTarget />
             </div>
-
-            <h3>Our Mission</h3>
-
-            <p>
-              Our mission is to deliver high-precision reinforcement detailing
-              and BIM solutions that meet international standards. Through
-              structured workflows and technical excellence, we help clients
-              achieve efficient, accurate, and cost-effective project outcomes.
+            <div className="vm-side-label">02</div>
+            <h3 className="vm-side-heading">
+              Empowering Construction with <br/>Smarter Reinforcement
+            </h3>
+            <p className="vm-side-text">
+              Our mission is to support the construction industry with smarter, buildable, 
+              and efficient reinforcement engineering solutions. By combining engineering 
+              expertise, advanced technology, and industry experience, we help contractors 
+              and engineers deliver stronger, safer, and more reliable structures.
             </p>
-
-            <div className="vm-points">
-              <span><FiCheckCircle /> Technical Excellence</span>
-              <span><FiCheckCircle /> Quality Focused</span>
-              <span><FiCheckCircle /> Efficient Delivery</span>
-            </div>
+            <div className="vm-side-marker"></div>
           </div>
 
+        </div>
+
+        {/* COMPACT BOTTOM ACCENT */}
+        <div className="vm-bottom">
+          <span className="vm-bottom-dot"></span>
+          <span className="vm-bottom-dot"></span>
+          <span className="vm-bottom-dot"></span>
         </div>
 
       </div>

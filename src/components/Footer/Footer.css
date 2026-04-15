@@ -17,7 +17,8 @@
   margin: 0 auto;
   padding: 70px 24px;
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: 1.8fr 1.8fr 1fr 1fr;
+  /* grid-template-columns: 1.5fr 1.4fr 1fr 1fr; */
   gap: 40px;
   align-items: start;
 }
@@ -53,6 +54,7 @@
   line-height: 1.7;
   color: #9ca3af;
   max-width: 320px;
+  text-align: justify;
 }
 
 /* headings */
@@ -105,15 +107,46 @@
   line-height: 1.6;
 }
 
+/* ADDED: Get in Touch button with 24/7 support */
+.as-footer-cta-button {
+  background: #C9A22D;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 40px;
+  margin-top: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 177, 199, 0.2);
+}
+
+.as-footer-cta-button:hover {
+  background: #0a9aad;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 177, 199, 0.3);
+}
+
+.as-footer-cta-support {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
 /* bottom bar */
 
 .as-footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 22px 24px;
-
   max-width: 1280px;
   margin: 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -136,17 +169,13 @@
 .as-footer-social a {
   width: 36px;
   height: 36px;
-
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: #d1d5db;
   font-size: 14px;
-
   transition: all 0.25s ease;
 }
 
@@ -211,5 +240,11 @@
 
   .as-footer-bottom-links {
     justify-content: center;
+  }
+
+  /* Make button center aligned on mobile */
+  .as-footer-cta-button {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
