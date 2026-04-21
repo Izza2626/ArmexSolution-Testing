@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import SEO from "../../seo/SEO"; // ✅ SEO IMPORT
+
 import { 
   FiShield, 
   FiLock, 
@@ -16,6 +18,11 @@ import "./PrivacyPolicy.css";
 const PrivacyPolicy = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [contentVisible, setContentVisible] = useState(true);
+
+  // ✅ Optional: scroll to top (safe add, no UI change)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const tabs = [
     {
@@ -77,81 +84,86 @@ const PrivacyPolicy = () => {
   };
 
   return (
-    <section className="pp-section">
-      <div className="pp-container">
-        
-        {/* Header */}
-        <div className="pp-header">
-          <span className="pp-subtitle">PRIVACY POLICY</span>
-          <h1 className="pp-title">
-            Your Privacy <span>Matters</span>
-          </h1>
-          <p className="pp-desc">
-            Last updated: March 15, 2025
-          </p>
-        </div>
+    <>
+      {/* ✅ SEO ADDED */}
+      <SEO page="privacyPolicy" />
 
-        {/* Main Content with Tabs */}
-        <div className="pp-main">
+      <section className="pp-section">
+        <div className="pp-container">
           
-          {/* Left Side - Tabs */}
-          <div className="pp-tabs">
-            {tabs.map((tab, index) => (
-              <button
-                key={index}
-                className={`pp-tab ${activeTab === index ? 'pp-tab-active' : ''}`}
-                onClick={() => handleTabClick(index)}
-              >
-                <span className="pp-tab-icon">{tab.icon}</span>
-                <span className="pp-tab-title">{tab.title}</span>
-                <FiArrowRight className="pp-tab-arrow" />
-              </button>
-            ))}
+          {/* Header */}
+          <div className="pp-header">
+            <span className="pp-subtitle">PRIVACY POLICY</span>
+            <h1 className="pp-title">
+              Your Privacy <span>Matters</span>
+            </h1>
+            <p className="pp-desc">
+              Last updated: March 15, 2025
+            </p>
           </div>
 
-          {/* Right Side - Content */}
-          <div className={`pp-content ${contentVisible ? 'pp-content-visible' : ''}`}>
-            <div className="pp-content-card">
-              <div className="pp-content-header">
-                <span className="pp-content-badge">
-                  SECTION {String(activeTab + 1).padStart(2, '0')}
-                </span>
-                <h2>{tabs[activeTab].title}</h2>
-              </div>
-              <div className="pp-content-body">
-                <p>{tabs[activeTab].content}</p>
-              </div>
-              <div className="pp-content-footer">
-                <div className="pp-progress">
-                  <div 
-                    className="pp-progress-bar" 
-                    style={{ width: `${((activeTab + 1) / tabs.length) * 100}%` }}
-                  ></div>
+          {/* Main Content */}
+          <div className="pp-main">
+            
+            {/* Tabs */}
+            <div className="pp-tabs">
+              {tabs.map((tab, index) => (
+                <button
+                  key={index}
+                  className={`pp-tab ${activeTab === index ? 'pp-tab-active' : ''}`}
+                  onClick={() => handleTabClick(index)}
+                >
+                  <span className="pp-tab-icon">{tab.icon}</span>
+                  <span className="pp-tab-title">{tab.title}</span>
+                  <FiArrowRight className="pp-tab-arrow" />
+                </button>
+              ))}
+            </div>
+
+            {/* Content */}
+            <div className={`pp-content ${contentVisible ? 'pp-content-visible' : ''}`}>
+              <div className="pp-content-card">
+                <div className="pp-content-header">
+                  <span className="pp-content-badge">
+                    SECTION {String(activeTab + 1).padStart(2, '0')}
+                  </span>
+                  <h2>{tabs[activeTab].title}</h2>
                 </div>
-                <span className="pp-page-indicator">
-                  {activeTab + 1} / {tabs.length}
-                </span>
+                <div className="pp-content-body">
+                  <p>{tabs[activeTab].content}</p>
+                </div>
+                <div className="pp-content-footer">
+                  <div className="pp-progress">
+                    <div 
+                      className="pp-progress-bar" 
+                      style={{ width: `${((activeTab + 1) / tabs.length) * 100}%` }}
+                    ></div>
+                  </div>
+                  <span className="pp-page-indicator">
+                    {activeTab + 1} / {tabs.length}
+                  </span>
+                </div>
               </div>
+            </div>
+
+          </div>
+
+          {/* Contact */}
+          <div className="pp-contact">
+            <div className="pp-contact-item">
+              <FiMail className="pp-contact-icon" />
+              <a href="mailto:admin@armexsolutions.com">admin@armexsolutions.com</a>
+            </div>
+            <div className="pp-contact-divider"></div>
+            <div className="pp-contact-item">
+              <FiShield className="pp-contact-icon" />
+              <span>Chennai, India</span>
             </div>
           </div>
 
         </div>
-
-        {/* Contact Footer */}
-        <div className="pp-contact">
-          <div className="pp-contact-item">
-            <FiMail className="pp-contact-icon" />
-            <a href="mailto:admin@armexsolutions.com">admin@armexsolutions.com</a>
-          </div>
-          <div className="pp-contact-divider"></div>
-          <div className="pp-contact-item">
-            <FiShield className="pp-contact-icon" />
-            <span>Chennai, India</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

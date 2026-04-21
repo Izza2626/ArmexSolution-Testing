@@ -128,17 +128,6 @@
   display: inline-block;
 }
 
-.cf-title span::after {
-  content: '';
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: rgba(201, 162, 45, 0.2);
-  z-index: -1;
-}
-
 .cf-desc {
   font-size: 0.95rem;
   color: #64748b;
@@ -152,7 +141,7 @@
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 40px;
-  align-items: stretch; /* Makes both columns same height */
+  align-items: stretch;
 }
 
 /* Left - Contact Info */
@@ -232,6 +221,7 @@
   flex-shrink: 0;
 }
 
+/* Icon styles - simple scale on hover (no rotation) */
 .cf-info-icon {
   width: 45px;
   height: 45px;
@@ -247,7 +237,9 @@
 }
 
 .cf-info-card:hover .cf-info-icon {
-  transform: rotate(360deg) scale(1.1);
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #b08f28 0%, #9a7a22 100%);
+  box-shadow: 0 10px 25px rgba(201, 162, 45, 0.4);
 }
 
 .cf-info-content {
@@ -289,7 +281,7 @@
   text-decoration: underline;
 }
 
-/* Info Footer - Adds content to match form height */
+/* Info Footer */
 .cf-info-footer {
   margin-top: 20px;
   padding: 15px;
@@ -298,15 +290,7 @@
   border: 1px solid rgba(201, 162, 45, 0.1);
 }
 
-.cf-info-response {
-  font-size: 0.85rem;
-  color: #334155;
-  margin: 0 0 8px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
+.cf-info-response,
 .cf-info-support {
   font-size: 0.85rem;
   color: #334155;
@@ -314,6 +298,16 @@
   display: flex;
   align-items: center;
   gap: 6px;
+}
+
+.cf-info-response {
+  margin-bottom: 8px;
+}
+
+/* Footer icons */
+.cf-footer-icon {
+  color: #C9A22D;
+  font-size: 0.9rem;
 }
 
 /* Right - Form */
@@ -396,6 +390,17 @@
   align-items: center;
 }
 
+/* Unified icon styling for all SVGs inside .cf-field-input (regardless of class) */
+.cf-field-input > svg {
+  position: absolute;
+  left: 15px;
+  color: #C9A22D;
+  font-size: 1rem;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Keep .cf-field-icon as fallback (for consistency) */
 .cf-field-icon {
   position: absolute;
   left: 15px;
@@ -429,10 +434,20 @@
 
 .cf-field-input select {
   cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9A22D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px;
 }
 
 .cf-field-input option {
   color: #1e2b37;
+}
+
+.cf-field-input textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
 /* Submit Button */

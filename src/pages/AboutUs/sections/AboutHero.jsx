@@ -14,6 +14,11 @@ import "./AboutHero.css";
 import AboutH from '../../../assets/images/About/AboutHero.png'
 
 const AboutHero = () => {
+
+  const scrollToNext = () => {
+  const section = document.getElementById('about-journey');
+  section?.scrollIntoView({ behavior: 'smooth' });
+};
   const statRefs = useRef([]);
   const cardRefs = useRef([]);
 
@@ -85,10 +90,13 @@ const AboutHero = () => {
             Advanced rebar detailing and BIM modelling that improves constructability, coordination, and project efficiency.
           </p>
 
-          <button className="about-btn about-slide-in">
-            <span className="about-btn-text">Explore Journey</span>
-            <FiArrowRight className="about-btn-icon" />
-          </button>
+            <button 
+              className="about-btn about-slide-in"
+              onClick={scrollToNext}
+            >
+              <span className="about-btn-text">Explore Journey</span>
+              <FiArrowRight className="about-btn-icon" />
+            </button>
 
           {/* STATS GRID */}
           <div className="about-stats">

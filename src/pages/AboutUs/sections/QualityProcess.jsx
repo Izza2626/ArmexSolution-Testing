@@ -11,31 +11,36 @@ import {
 } from 'react-icons/fi';
 import './QualityProcess.css';
 
+import AboutQP1 from '../../../assets/images/About/AboutQP1.jpg'
+import AboutQP2 from '../../../assets/images/About/AboutQP2.jpg'
+import AboutQP3 from '../../../assets/images/About/AboutQP3.jpg'
+import AboutQP4 from '../../../assets/images/About/AboutQP4.jpg'
+
 const QualityProcess = () => {
   const processSteps = [
     {
-      image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=70&h=70&fit=crop",
+      image: AboutQP1,
       title: "Code Compliance",
       description: "Every drawing aligned with BS, Eurocode, ACI, ASTM, IS standards",
       color: "#C9A22D",
       step: "01"
     },
     {
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=70&h=70&fit=crop",
+      image: AboutQP2,
       title: "Accuracy Checks",
       description: "Multi-level review system to eliminate errors",
       color: "#0F766E",
       step: "02"
     },
     {
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=70&h=70&fit=crop",
+      image: AboutQP3,
       title: "Client-Centric",
       description: "Clear, buildable documentation for smooth approvals",
       color: "#C9A22D",
       step: "03"
     },
     {
-      image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=70&h=70&fit=crop",
+      image: AboutQP4,
       title: "Continuous Improvement",
       description: "Regular training and system upgrades",
       color: "#0F766E",

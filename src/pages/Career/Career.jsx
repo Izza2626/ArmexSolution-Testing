@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import SEO from '../../seo/SEO'; // ✅ SEO IMPORT
+
 import CareerHero from './sections/CareerHero';
 import WhyJoinUs from './sections/WhyJoinUs';
 import UploadCV from './sections/UploadCV';
@@ -14,11 +16,16 @@ const Career = () => {
   }, []);
 
   return (
-    <main className="career-page">
-      <CareerHero />
-      <WhyJoinUs />
-      <UploadCV />
-    </main>
+    <>
+      {/* ✅ SEO ADDED */}
+      <SEO page="career" />
+
+      <main className="career-page">
+        <CareerHero />
+        <WhyJoinUs />
+        <UploadCV />
+      </main>
+    </>
   );
 };
 

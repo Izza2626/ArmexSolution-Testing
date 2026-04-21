@@ -148,6 +148,7 @@
   text-decoration: none;
   padding: 0.75rem 1.5rem;
   background: rgba(201, 162, 45, 0.08);
+  border: none;
   border-radius: 40px;
   transition: all 0.3s ease;
 }

@@ -496,45 +496,12 @@
   display: inline-block;
 }
 
-
-
 .homeIntro-text {
   font-size: 1rem;
   line-height: 1.8;
   color: #666;
   margin-bottom: 30px;
   max-width: 500px;
-}
-
-/* Mini Stats */
-.homeIntro-miniStats {
-  display: flex;
-  gap: 40px;
-  margin-bottom: 30px;
-}
-
-.homeIntro-miniStat {
-  text-align: left;
-}
-
-.homeIntro-miniNumber {
-  display: block;
-  font-size: 2rem;
-  font-weight: 800;
-  line-height: 1;
-  margin-bottom: 5px;
-}
-
-.homeIntro-miniLabel {
-  display: block;
-  font-size: 0.8rem;
-  color: #999;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-
-.homeIntro-miniStat:hover .homeIntro-miniLabel {
-  color: #C9A22D;
 }
 
 /* Standards */
@@ -681,10 +648,6 @@
     max-width: 600px;
   }
   
-  .homeIntro-miniStats {
-    justify-content: center;
-  }
-  
   .homeIntro-standards {
     justify-content: center;
   }
@@ -731,10 +694,6 @@
     margin-right: auto;
   }
   
-  .homeIntro-miniStats {
-    justify-content: center;
-  }
-  
   .homeIntro-standards {
     justify-content: center;
   }
@@ -749,10 +708,6 @@
   
   .homeIntro-collageSmall {
     height: 150px;
-  }
-  
-  .homeIntro-miniNumber {
-    font-size: 1.8rem;
   }
   
   .homeIntro-ring {
@@ -819,19 +774,6 @@
     font-size: 0.95rem;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  .homeIntro-miniStats {
-    justify-content: center;
-    gap: 30px;
-  }
-  
-  .homeIntro-miniNumber {
-    font-size: 1.6rem;
-  }
-  
-  .homeIntro-miniLabel {
-    font-size: 0.75rem;
   }
   
   .homeIntro-standards {
@@ -928,20 +870,6 @@
     font-size: 0.9rem;
     line-height: 1.6;
     margin-bottom: 25px;
-  }
-  
-  .homeIntro-miniStats {
-    justify-content: center;
-    gap: 25px;
-    margin-bottom: 25px;
-  }
-  
-  .homeIntro-miniNumber {
-    font-size: 1.5rem;
-  }
-  
-  .homeIntro-miniLabel {
-    font-size: 0.7rem;
   }
   
   .homeIntro-standards {
@@ -1051,20 +979,6 @@
     font-size: 0.85rem;
     line-height: 1.5;
     margin-bottom: 20px;
-  }
-  
-  .homeIntro-miniStats {
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .homeIntro-miniNumber {
-    font-size: 1.3rem;
-  }
-  
-  .homeIntro-miniLabel {
-    font-size: 0.65rem;
   }
   
   .homeIntro-standards {
@@ -1187,20 +1101,6 @@
     margin-bottom: 18px;
   }
   
-  .homeIntro-miniStats {
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 18px;
-  }
-  
-  .homeIntro-miniNumber {
-    font-size: 1.2rem;
-  }
-  
-  .homeIntro-miniLabel {
-    font-size: 0.6rem;
-  }
-  
   .homeIntro-standards {
     justify-content: center;
     gap: 6px;
@@ -1310,25 +1210,6 @@
     margin-bottom: 15px;
   }
   
-  .homeIntro-miniStats {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
-  }
-  
-  .homeIntro-miniStat {
-    text-align: center;
-  }
-  
-  .homeIntro-miniNumber {
-    font-size: 1.1rem;
-  }
-  
-  .homeIntro-miniLabel {
-    font-size: 0.55rem;
-  }
-  
   .homeIntro-standards {
     justify-content: center;
     gap: 5px;
@@ -1391,10 +1272,6 @@
   color: #555;
 }
 
-.homeIntro-miniLabel {
-  color: #888;
-}
-
 /* Touch target optimization for mobile */
 @media (max-width: 768px) {
   .homeIntro-cta,
@@ -1428,8 +1305,7 @@ html {
   .homeIntro-orb,
   .homeIntro-collageItem img,
   .homeIntro-cta,
-  .homeIntro-standard,
-  .homeIntro-miniLabel {
+  .homeIntro-standard {
     animation: none !important;
     transition: none !important;
     transform: none !important;
@@ -1444,10 +1320,6 @@ html {
 @media (prefers-contrast: high) {
   .homeIntro-text {
     color: #000;
-  }
-  
-  .homeIntro-miniLabel {
-    color: #333;
   }
   
   .homeIntro-standard {
@@ -1542,9 +1414,5 @@ html {
   
   .homeIntro-text {
     font-size: 0.85rem;
-  }
-  
-  .homeIntro-miniStats {
-    gap: 20px;
   }
 }

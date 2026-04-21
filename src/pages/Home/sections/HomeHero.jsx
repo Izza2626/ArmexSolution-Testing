@@ -7,19 +7,19 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import './HomeHero.css';
 
-import HomeHero1 from '../../../assets/images/Home/HomeHero1.jpg'
-import HomeHero2 from '../../../assets/images/Home/HomeHero2.jpg'
-import HomeHero3 from '../../../assets/images/Home/HomeHero3.jpg'
-import HomeHero4 from '../../../assets/images/Home/HomeHero4.jpg'
-import HomeHero5 from '../../../assets/images/Home/HomeHero5.jpg'
-import HomeHero6 from '../../../assets/images/Home/HomeHero6.jpg'
+import HomeHero1 from '../../../assets/images/Home/HomeHero1.png'
+import HomeHero2 from '../../../assets/images/Home/HomeHero2.png'
+import HomeHero3 from '../../../assets/images/Home/HomeHero3.png'
+import HomeHero4 from '../../../assets/images/Home/HomeHero4.png'
+import HomeHero5 from '../../../assets/images/Home/HomeHero5.png'
+import HomeHero6 from '../../../assets/images/Home/HomeHero6.png'
 
 const heroSlides = [
   {
     id: 1,
     image: HomeHero1,
     title: 'BIM DRIVEN',
-    title2: '3D REBAR DETAILING',
+    title2: '3D REBAR MODELLING',
     description: 'Intelligent BIM-based reinforcement modelling delivering precise spatial coordination, constructability validation, and clash-free reinforcement layouts.'
   },
   {
@@ -62,6 +62,11 @@ const heroSlides = [
 const HomeHero = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [swiper, setSwiper] = useState(null);
+  
+  const scrollToIntro = () => {
+  const section = document.getElementById('home-intro');
+  section?.scrollIntoView({ behavior: 'smooth' });
+};
 
   return (
     <section className="home-hero">
@@ -97,7 +102,7 @@ const HomeHero = () => {
                 <p className="description">{slide.description}</p>
 
                 <div className="button-row">
-                  <button className="btn-primary">
+                  <button className="btn-primary" onClick={scrollToIntro}>
                     Explore More
                     <span className="btn-arrow">→</span>
                   </button>

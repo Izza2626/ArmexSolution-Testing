@@ -1,0 +1,15 @@
+# robots.txt — Armex Solutions
+# https://www.armex-solutions.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Block internal/utility paths from indexing
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /dist/
+Disallow: /*.json$
+
+# Sitemap location
+Sitemap: https://www.armex-solutions.com/sitemap.xml

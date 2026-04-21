@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import './HomeIntro.css';
 
-import HomeIntro1 from '../../../assets/images/Home/HomeIntro1.jpg'
+import HomeIntro1 from '../../../assets/images/Home/HomeIntro1.png'
+import HomeIntro3 from '../../../assets/images/Home/HomeIntro3.png'
 import HomeIntro2 from '../../../assets/images/Home/HomeIntro2.jpg'
-import HomeIntro3 from '../../../assets/images/Home/HomeIntro3.jpg'
 
 const HomeIntro = () => {
   const [ref, inView] = useInView({
@@ -12,8 +12,13 @@ const HomeIntro = () => {
     threshold: 0.1,
   });
 
+  const scrollToServices = () => {
+    const section = document.getElementById('HomeServices');
+    section?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section className="homeIntro" ref={ref}>
+    <section className="homeIntro" id="home-intro" ref={ref}>
       {/* Pure White Background */}
       <div className="homeIntro-whiteBg"></div>
       <div className="homeIntro-container">
@@ -78,52 +83,33 @@ const HomeIntro = () => {
             clash-free coordination every time.
           </motion.p>
 
-          {/* Mini Stats */}
-          <motion.div 
-            className="homeIntro-miniStats"
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.6, duration: 0.6 }}
-          >
-            <div className="homeIntro-miniStat">
-              <span className="homeIntro-miniNumber" style={{ color: "#C9A22D" }}>100+</span>
-              <span className="homeIntro-miniLabel">Projects</span>
-            </div>
-            <div className="homeIntro-miniStat">
-              <span className="homeIntro-miniNumber" style={{ color: "#243F88" }}>10+</span>
-              <span className="homeIntro-miniLabel">Countries</span>
-            </div>
-            <div className="homeIntro-miniStat">
-              <span className="homeIntro-miniNumber" style={{ color: "#C9A22D" }}>99.9%</span>
-              <span className="homeIntro-miniLabel">Accuracy</span>
-            </div>
-          </motion.div>
-
           {/* Standards */}
           <motion.div 
             className="homeIntro-standards"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.7, duration: 0.6 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
           >
-            <span className="homeIntro-standard" style={{ borderColor: "#C9A22D", color: "#C9A22D" }}>BS 8666</span>
-            <span className="homeIntro-standard" style={{ borderColor: "#243F88", color: "#243F88" }}>ACI 318</span>
-            <span className="homeIntro-standard" style={{ borderColor: "#C9A22D", color: "#C9A22D" }}>EUROCODE</span>
-            <span className="homeIntro-standard" style={{ borderColor: "#243F88", color: "#243F88" }}>ISO 9001</span>
+            <span className="homeIntro-standard" style={{ borderColor: "#C9A22D", color: "#C9A22D" }}>British Standards (BS 8666)</span>
+            <span className="homeIntro-standard" style={{ borderColor: "#243F88", color: "#243F88" }}>American Standards (ACI 318)</span>
+            <span className="homeIntro-standard" style={{ borderColor: "#C9A22D", color: "#C9A22D" }}>European Standards (Eurocode 2)</span>
+            <span className="homeIntro-standard" style={{ borderColor: "#243F88", color: "#243F88" }}>Australian Standards (AS 3600)</span>
+            <span className="homeIntro-standard" style={{ borderColor: "#C9A22D", color: "#C9A22D" }}>Indian Standards (IS 456/ SP 34/ IS 2502)</span>
           </motion.div>
 
           {/* CTA Button */}
-          <motion.button 
-            className="homeIntro-cta"
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span>Explore Services</span>
-            <span className="homeIntro-ctaArrow">→</span>
-          </motion.button>
+            <motion.button 
+              className="homeIntro-cta"
+              onClick={scrollToServices}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.7, duration: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span>Explore Services</span>
+              <span className="homeIntro-ctaArrow">→</span>
+            </motion.button>
         </motion.div>
       </div>
     </section>

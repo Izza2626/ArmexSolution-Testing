@@ -1,13 +1,102 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- ===================== CHARACTER SET & VIEWPORT ===================== -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>armex-solutions</title>
+
+    <!-- ===================== PRIMARY SEO META ===================== -->
+    <title>Armex Solutions | Engineering & Industrial Services</title>
+    <meta
+      name="description"
+      content="Armex Solutions delivers precision engineering, industrial services, and end-to-end project management. Trusted by industry leaders for quality, safety, and on-time delivery."
+    />
+    <meta name="keywords" content="armex solutions, engineering services, industrial solutions, project management, mechanical engineering" />
+    <meta name="author" content="Armex Solutions" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://www.armex-solutions.com/" />
+
+    <!-- ===================== OPEN GRAPH (Facebook / LinkedIn) ===================== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Armex Solutions" />
+    <meta property="og:title" content="Armex Solutions | Engineering & Industrial Services" />
+    <meta
+      property="og:description"
+      content="Armex Solutions delivers precision engineering, industrial services, and end-to-end project management. Trusted by industry leaders for quality, safety, and on-time delivery."
+    />
+    <meta property="og:url" content="https://www.armex-solutions.com/" />
+    <meta property="og:image" content="https://www.armex-solutions.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Armex Solutions – Engineering & Industrial Services" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- ===================== TWITTER CARD ===================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ArmexSolutions" />
+    <meta name="twitter:creator" content="@ArmexSolutions" />
+    <meta name="twitter:title" content="Armex Solutions | Engineering & Industrial Services" />
+    <meta
+      name="twitter:description"
+      content="Precision engineering and industrial services trusted by industry leaders. Quality, safety, on-time delivery."
+    />
+    <meta name="twitter:image" content="https://www.armex-solutions.com/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Armex Solutions – Engineering & Industrial Services" />
+
+    <!-- ===================== FAVICON & ICONS ===================== -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#1a2b4a" />
+
+    <!-- ===================== SITEMAP REFERENCE ===================== -->
+    <!--
+      Sitemap: https://www.armex-solutions.com/sitemap.xml
+      (also declared inside robots.txt — see /public/robots.txt)
+    -->
+
+    <!-- ===================== PERFORMANCE: DNS PREFETCH / PRECONNECT ===================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ===================== STRUCTURED DATA (JSON-LD) ===================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Armex Solutions",
+      "url": "https://www.armex-solutions.com",
+      "logo": "https://www.armex-solutions.com/logo.png",
+      "description": "Armex Solutions delivers precision engineering, industrial services, and end-to-end project management.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "areaServed": "IN",
+        "availableLanguage": ["English"]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/armex-solutions",
+        "https://twitter.com/ArmexSolutions"
+      ]
+    }
+    </script>
   </head>
+
   <body>
+    <!--
+      React mounts here.
+      The heading hierarchy (H1 → H2 → H3) must be enforced inside your
+      React components. H1 should appear exactly once per page — e.g.:
+        HomePage   → <h1>Engineering & Industrial Services</h1>
+        AboutPage  → <h1>About Armex Solutions</h1>
+        ServicesPage → <h1>Our Services</h1>
+      Never skip heading levels and never use headings for styling alone.
+    -->
     <div id="root"></div>
+
+    <!-- Vite entry point -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

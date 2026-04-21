@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../../seo/SEO'; // ✅ SEO IMPORT
+
 import { 
   FiHome, 
   FiInfo, 
@@ -61,84 +63,89 @@ const Sitemap = () => {
   ];
 
   return (
-    <section className="sm-section">
-      <div className="sm-container">
-        
-        {/* Header */}
-        <div className="sm-header">
-          <span className="sm-subtitle">SITE NAVIGATION</span>
-          <h1 className="sm-title">
-            <span className="sm-title-line">Sitemap</span>
-          </h1>
-          <p className="sm-desc">
-            Explore all pages and sections of ARMEX Solutions India
-          </p>
-        </div>
+    <>
+      {/* ✅ SEO ADDED */}
+      <SEO page="sitemap" />
 
-        {/* Status Bar */}
-        <div className="sm-status-bar">
-          <div className="sm-status-item">
-            <span className="sm-status-label">TOTAL PAGES</span>
-            <span className="sm-status-value">
-              {sitemapData.reduce((acc, cat) => acc + cat.links.length, 0)}
-            </span>
+      <section className="sm-section">
+        <div className="sm-container">
+          
+          {/* Header */}
+          <div className="sm-header">
+            <span className="sm-subtitle">SITE NAVIGATION</span>
+            <h1 className="sm-title">
+              <span className="sm-title-line">Sitemap</span>
+            </h1>
+            <p className="sm-desc">
+              Explore all pages and sections of ARMEX Solutions India
+            </p>
           </div>
-          <div className="sm-status-divider"></div>
-          <div className="sm-status-item">
-            <span className="sm-status-label">CATEGORIES</span>
-            <span className="sm-status-value">{sitemapData.length}</span>
-          </div>
-          <div className="sm-status-divider"></div>
-          <div className="sm-status-item">
-            <span className="sm-status-label">LAST UPDATED</span>
-            <span className="sm-status-value">{lastUpdated}</span>
-          </div>
-        </div>
 
-        {/* Sitemap Grid */}
-        <div className="sm-grid">
-          {sitemapData.map((category, catIndex) => (
-            <div key={catIndex} className="sm-category-card">
-              <div className="sm-category-header">
-                <span className="sm-category-icon">{category.icon}</span>
-                <h2 className="sm-category-title">{category.category}</h2>
-                <span className="sm-category-count">{category.links.length} pages</span>
-              </div>
-              
-              <div className="sm-links-list">
-                {category.links.map((link, linkIndex) => (
-                  <Link 
-                    key={linkIndex} 
-                    to={link.path} 
-                    className="sm-link-item"
-                  >
-                    <div className="sm-link-content">
-                      <span className="sm-link-label">{link.label}</span>
-                      <span className="sm-link-desc">{link.description}</span>
-                    </div>
-                    <FiArrowRight className="sm-link-arrow" />
-                  </Link>
-                ))}
-              </div>
+          {/* Status Bar */}
+          <div className="sm-status-bar">
+            <div className="sm-status-item">
+              <span className="sm-status-label">TOTAL PAGES</span>
+              <span className="sm-status-value">
+                {sitemapData.reduce((acc, cat) => acc + cat.links.length, 0)}
+              </span>
             </div>
-          ))}
-        </div>
-
-        {/* Quick Links Bar */}
-        <div className="sm-quick-links">
-          <span className="sm-quick-label">Quick jump:</span>
-          <div className="sm-quick-items">
-            <Link to="/" className="sm-quick-item">Home</Link>
-            <Link to="/about-us" className="sm-quick-item">About</Link>
-            <Link to="/services" className="sm-quick-item">Services</Link>
-            <Link to="/contact-us" className="sm-quick-item">Contact</Link>
-            <Link to="/privacy-policy" className="sm-quick-item">Privacy</Link>
-            <Link to="/terms-conditions" className="sm-quick-item">Terms</Link>
+            <div className="sm-status-divider"></div>
+            <div className="sm-status-item">
+              <span className="sm-status-label">CATEGORIES</span>
+              <span className="sm-status-value">{sitemapData.length}</span>
+            </div>
+            <div className="sm-status-divider"></div>
+            <div className="sm-status-item">
+              <span className="sm-status-label">LAST UPDATED</span>
+              <span className="sm-status-value">{lastUpdated}</span>
+            </div>
           </div>
-        </div>
 
-      </div>
-    </section>
+          {/* Sitemap Grid */}
+          <div className="sm-grid">
+            {sitemapData.map((category, catIndex) => (
+              <div key={catIndex} className="sm-category-card">
+                <div className="sm-category-header">
+                  <span className="sm-category-icon">{category.icon}</span>
+                  <h2 className="sm-category-title">{category.category}</h2>
+                  <span className="sm-category-count">{category.links.length} pages</span>
+                </div>
+                
+                <div className="sm-links-list">
+                  {category.links.map((link, linkIndex) => (
+                    <Link 
+                      key={linkIndex} 
+                      to={link.path} 
+                      className="sm-link-item"
+                    >
+                      <div className="sm-link-content">
+                        <span className="sm-link-label">{link.label}</span>
+                        <span className="sm-link-desc">{link.description}</span>
+                      </div>
+                      <FiArrowRight className="sm-link-arrow" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Quick Links */}
+          <div className="sm-quick-links">
+            <span className="sm-quick-label">Quick jump:</span>
+            <div className="sm-quick-items">
+              <Link to="/" className="sm-quick-item">Home</Link>
+              <Link to="/about-us" className="sm-quick-item">About</Link>
+              <Link to="/services" className="sm-quick-item">Services</Link>
+              <Link to="/contact-us" className="sm-quick-item">Contact</Link>
+              <Link to="/privacy-policy" className="sm-quick-item">Privacy</Link>
+              <Link to="/terms-conditions" className="sm-quick-item">Terms</Link>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </>
   );
 };
 

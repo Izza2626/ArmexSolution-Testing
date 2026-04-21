@@ -1,6 +1,9 @@
+// ConnectSection.jsx
 import React, { useEffect, useRef } from "react";
-import { FiMessageCircle, FiCheckCircle, FiArrowRight, FiMail, FiPhone,FiUsers, FiMapPin } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 import "./ConnectSection.css";
+import ContactCon1 from '../../../assets/images/Contact/ContactConnection1.jpg'
+import ContactCon2 from '../../../assets/images/Contact/ContactConnection2.jpeg'
 
 const ConnectSection = () => {
   const imageRefs = useRef([]);
@@ -24,118 +27,103 @@ const ConnectSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const reasons = [
-    "10+ years experience",
-    "2 hour response",
-    "500+ projects",
-    "Global standards"
-  ];
+  // ✅ SCROLL FUNCTION
+  const handleScroll = () => {
+    const section = document.getElementById("contactF");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const images = [
     {
-      url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      alt: "Team meeting",
-      delay: "0s"
+      url: ContactCon1,
+      alt: "Team collaboration",
+      delay: "0s",
+      rotate: "-3deg",
+      top: "0%",
+      left: "0%"
     },
     {
-      url: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      alt: "Engineer working",
-      delay: "0.2s"
+      url: ContactCon2,
+      alt: "Engineer at work",
+      delay: "0.15s",
+      rotate: "2deg",
+      top: "30%",
+      left: "45%"
     },
     {
-      url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      alt: "Construction site",
-      delay: "0.4s"
+      url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd",
+      alt: "Construction planning",
+      delay: "0.3s",
+      rotate: "-1deg",
+      top: "60%",
+      left: "15%"
     }
   ];
 
   return (
     <section className="cn-section">
-      {/* Background Pattern */}
       <div className="cn-bg-pattern"></div>
-      
+
       <div className="cn-container">
-        
-        {/* Left - Image Collage */}
+
+        {/* LEFT */}
         <div className="cn-collage">
           {images.map((img, index) => (
             <div
               key={index}
-              className={`cn-collage-item cn-item-${index + 1}`}
-              ref={el => imageRefs.current[index] = el}
-              style={{ animationDelay: img.delay }}
+              className="cn-collage-item"
+              ref={(el) => (imageRefs.current[index] = el)}
+              style={{
+                animationDelay: img.delay,
+                top: img.top,
+                left: img.left,
+                transform: `rotate(${img.rotate})`
+              }}
             >
               <img src={img.url} alt={img.alt} />
-              <div className="cn-item-overlay">
-                {index === 0 && <FiUsers className="cn-overlay-icon" />}
-                {index === 1 && <FiMail className="cn-overlay-icon" />}
-                {index === 2 && <FiMapPin className="cn-overlay-icon" />}
-              </div>
+              <div className="cn-image-glow"></div>
             </div>
           ))}
-
-          {/* Floating Contact Cards */}
-          <div className="cn-float-card cn-float-1">
-            <FiMessageCircle />
-            <span>Let's Talk</span>
-          </div>
-          <div className="cn-float-card cn-float-2">
-            <FiPhone />
-            <span>24/7 Support</span>
-          </div>
+          <div className="cn-accent-dot"></div>
         </div>
 
-        {/* Right - Content */}
+        {/* RIGHT */}
         <div className="cn-content">
           <div className="cn-content-wrapper">
             <span className="cn-subtitle">CONNECT WITH US</span>
             <h2 className="cn-title">
               Ready to start <span>your project?</span>
             </h2>
-            
             <p className="cn-desc">
               Share your requirements with us and get expert assistance within 2 hours
             </p>
 
-            <div className="cn-reasons">
-              {reasons.map((reason, index) => (
-                <div key={index} className="cn-reason-item">
-                  <FiCheckCircle className="cn-reason-icon" />
-                  <span>{reason}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="cn-stats-mini">
-              <div className="cn-stat-mini">
-                <span className="cn-stat-number">24/7</span>
-                <span className="cn-stat-label">Support</span>
-              </div>
-              <div className="cn-stat-mini">
-                <span className="cn-stat-number">100%</span>
-                <span className="cn-stat-label">Satisfaction</span>
-              </div>
-            </div>
-
-            <div className="cn-hint">
+            {/* ✅ BUTTON ADDED */}
+            <button className="cn-hint" onClick={handleScroll}>
               <span>Fill the form below</span>
               <FiArrowRight className="cn-hint-icon" />
               <div className="cn-hint-glow"></div>
-            </div>
+            </button>
+
           </div>
         </div>
-
       </div>
 
-      {/* Animated Particles */}
+      {/* PARTICLES */}
       <div className="cn-particles">
-        {[...Array(8)].map((_, i) => (
-          <div key={i} className="cn-particle" style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 5}s`,
-            animationDuration: `${5 + Math.random() * 5}s`
-          }}></div>
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className="cn-particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${6 + Math.random() * 4}s`
+            }}
+          ></div>
         ))}
       </div>
     </section>

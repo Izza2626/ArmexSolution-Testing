@@ -8,7 +8,6 @@ import AboutOverview4 from '../../../assets/images/About/AboutOverview4.jpeg';
 
 const CompanyOverview = () => {
   const sectionRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(null);
 
   const images = [
     { src: AboutOverview1, alt: "Rebar detailing" },
@@ -17,11 +16,6 @@ const CompanyOverview = () => {
     { src: AboutOverview4, alt: "Structural engineering" }
   ];
 
-  const handlePieceClick = (index) => {
-    // Toggle: click same image to reset, click another to switch
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
   return (
     <section className="co-section" ref={sectionRef}>
       <div className="co-bg-circle co-bg-circle-1"></div>
@@ -29,7 +23,7 @@ const CompanyOverview = () => {
       <div className="co-bg-dots"></div>
 
       <div className="co-container">
-        {/* LEFT CONTENT - unchanged */}
+        {/* LEFT CONTENT – unchanged */}
         <div className="co-left co-fade-left">
           <span className="co-badge co-slide-down">OVERVIEW</span>
           <h2 className="co-title">
@@ -47,16 +41,14 @@ const CompanyOverview = () => {
           </p>
         </div>
 
-        {/* RIGHT SIDE - puzzle square (2x2 grid) */}
+        {/* RIGHT SIDE – new modern collage */}
         <div className="co-right co-fade-right">
-          <div className="co-puzzle-square">
+          <div className="co-collage-grid">
             {images.map((img, idx) => (
-              <div
-                key={idx}
-                className={`co-puzzle-tile ${activeIndex === idx ? "active" : ""} ${
-                  activeIndex !== null && activeIndex !== idx ? "disabled" : ""
-                }`}
-                onClick={() => handlePieceClick(idx)}
+              <div 
+                key={idx} 
+                className="co-collage-item"
+                style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 <img src={img.src} alt={img.alt} />
               </div>

@@ -27,7 +27,7 @@ const WhoWeAre = () => {
   ];
 
   return (
-    <section className="wwa-section">
+    <section className="wwa-section" id='about-journey'>
       <div className="wwa-container">
         
         {/* Left Content */}

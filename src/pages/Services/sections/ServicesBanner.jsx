@@ -1,7 +1,7 @@
 import React from "react";
 import { FiCheckCircle, FiArrowRight, FiTrendingUp, FiShield, FiCpu, FiUsers, FiGlobe, FiClock } from "react-icons/fi";
 import "./ServicesBanner.css";
-
+import ServiceWCU from '../../../assets/images/Service/ServiceWCU.jpeg'
 const ServicesBanner = () => {
   const expertiseItems = [
     { icon: <FiTrendingUp />, title: "Engineering Expertise", color: "#C9A22D" },
@@ -13,12 +13,12 @@ const ServicesBanner = () => {
   ];
 
   return (
-    <section className="sb-section">
+    <section className="sb-section" id="services-list">
       <div className="sb-container">
         
         {/* Left Content */}
         <div className="sb-content">
-          <span className="sb-subtitle">✦ WHO WE ARE ✦</span>
+          <span className="sb-subtitle">✦ WHY CHOOSE US ✦</span>
           <h2 className="sb-title">
             Reliable Rebar Detailing <span>Solutions Worldwide</span>
           </h2>
@@ -48,22 +48,27 @@ const ServicesBanner = () => {
             ))}
           </div>
 
-          <a href="/contact" className="sb-link">
-            Discuss Your Project <FiArrowRight className="sb-link-icon" />
-          </a>
+<button
+  className="sb-link"
+  onClick={() =>
+    document.getElementById("ServiceCat")?.scrollIntoView({ behavior: "smooth" })
+  }
+>
+  Discuss Your Project <FiArrowRight className="sb-link-icon" />
+</button>
         </div>
 
         {/* Right Image */}
         <div className="sb-image-wrapper">
           <div className="sb-image-card">
             <img 
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=700&fit=crop" 
+              src={ServiceWCU} 
               alt="Rebar Detailing Engineering"
               className="sb-image"
             />
             <div className="sb-image-overlay"></div>
             <div className="sb-image-badge">
-              <span>20+ Years</span>
+              <span>10+ Years</span>
               <small>Combined Experience</small>
             </div>
           </div>

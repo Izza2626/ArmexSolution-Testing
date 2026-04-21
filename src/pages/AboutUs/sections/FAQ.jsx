@@ -14,28 +14,28 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "What standards do you follow?",
-      answer: "BS 8666 (UK), Eurocode 2 (Europe), ACI 318 (USA), and IS Codes (India)."
+      question: "What information is required to start a project?",
+      answer: "To begin a rebar detailing project, we typically require the following information:\n\nConcrete GA (General Arrangement) drawings in PDF or CAD format\nProject program or schedule, including the required review timeline\nRebar design notes, including lap lengths, concrete cover, and special detailing requirements\nProject standards and applicable codes\nProject title sheet in AutoCAD .DWG format\n\nProviding these documents helps us ensure accurate reinforcement detailing and smooth project coordination."
     },
     {
-      question: "Which software do you use?",
-      answer: "AutoCAD, Revit, Tekla, RebarCAD, and Navisworks for BIM coordination."
+      question: "What types of structures do you work on?",
+      answer: "We provide detailing for a wide range of structures including:\n\nResidential buildings\nCommercial buildings\nBridges and infrastructure\nWind turbine foundations\nIndustrial plants\nStadiums and large structures"
     },
     {
-      question: "What is your turnaround time?",
-      answer: "3-7 working days for most projects. Timeline provided at project start."
+      question: "What software do you use for rebar detailing?",
+      answer: "Our team works with industry-leading software including:\n\nRebar CAD and CADS RC\nAutodesk Revit\nAutoCAD\nNavisworks for clash detection\n\nThese tools ensure accurate and buildable reinforcement models."
     },
     {
-      question: "Do you offer revisions?",
-      answer: "Yes, revisions are included. We work closely to implement changes accurately."
+      question: "How quickly can you deliver rebar shop drawings?",
+      answer: "Delivery time depends on the project size and complexity. Smaller projects may take a few days, while large infrastructure projects may take longer. We always work closely with clients to meet project deadlines."
     },
     {
-      question: "Which countries do you serve?",
-      answer: "USA, UK, UAE, Saudi Arabia, and India with local code compliance."
+      question: "What deliverables do you provide?",
+      answer: "Our typical deliverables include:\n\nRebar shop drawings\nBar bending schedules (BBS)\n3D rebar models\nFabrication drawings\nIFC / BIM models"
     },
     {
-      question: "How do you ensure quality?",
-      answer: "Multi-level quality checks: technical review, code compliance, coordination check."
+      question: "Which international standards do you follow?",
+      answer: "We provide rebar detailing services based on international standards including:\n\nACI / CRSI (USA)\nBS 8666 (UK)\nEurocode 2 (Europe)\nAS 3600 (Australia)\nIS 456 / SP34 (India)\n\nWe can adapt our detailing to match the project specifications and local codes."
     }
   ];
 

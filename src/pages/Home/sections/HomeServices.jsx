@@ -1,55 +1,69 @@
 import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import "./HomeServices.css";
+import { useNavigate } from "react-router-dom"; 
+
+import HomeMRS1 from '../../../assets/images/Home/HomeMRS1.png'
+import HomeMRS2 from '../../../assets/images/Home/HomeMRS2.png'
+import HomeMRS3 from '../../../assets/images/Home/HomeMRS3.png'
+import HomeMRS4 from '../../../assets/images/Home/HomeMRS4.png'
+
 
 const services = [
   {
-    title: "Shop Drawings",
+    title: "2D SHOP DRAWINGS",
     subtitle: "Constructible RO drawings",
     image:
-      "https://images.unsplash.com/photo-1601134467661-3d775b999c8b?q=80&w=1200&auto=format&fit=crop",
+      HomeMRS1,
   },
   {
-    title: "BIM Modeling",
+    title: "3D BIM MODELLING",
     subtitle: "3D reinforcement modeling",
     image:
-      "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1200&auto=format&fit=crop",
+      HomeMRS2,
   },
   {
-    title: "Bar Bending Schedule",
+    title: "BAR BENDING SCHEDULE",
     subtitle: "Fabrication ready BBS",
     image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop",
+      HomeMRS3,
   },
   {
-    title: "Bar Bending Schedule",
-    subtitle: "Fabrication ready BBS",
+    title: "REBAR ESTIMATION",
+    subtitle: "Accurate quantity take-offs",
     image:
-      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop",
+      HomeMRS4,
   },
 ];
 
 // 🔥 Reusable Card Component
-const ServiceCard = ({ data, className = "" }) => (
-  <motion.div className={`serviceCard ${className}`} whileHover={{ scale: 1.02 }}>
-    <img src={data.image} alt="" />
+const ServiceCard = ({ data, className = "" }) => {
+  const navigate = useNavigate();
 
-    <div className="serviceOverlay">
-      <div>
-        <h3>{data.title}</h3>
-        <p>{data.subtitle}</p>
+  const goToServices = () => {
+    navigate("/services"); // your route path
+  };
+
+  return (
+    <motion.div className={`serviceCard ${className}`} whileHover={{ scale: 1.02 }}>
+      <img src={data.image} alt="" />
+
+      <div className="serviceOverlay">
+        <div>
+          <h3>{data.title}</h3>
+          <p>{data.subtitle}</p>
+        </div>
+
+        <button className="serviceBtn" onClick={goToServices}>
+          <FiArrowUpRight />
+        </button>
       </div>
-
-      <button className="serviceBtn">
-        <FiArrowUpRight />
-      </button>
-    </div>
-  </motion.div>
-);
-
+    </motion.div>
+  );
+};
 const HomeServices = () => {
   return (
-    <section className="homeServices">
+    <section className="homeServices" id="HomeServices">
       <div className="homeServices-container">
 
         <div className="homeServices-header">

@@ -124,7 +124,7 @@
 }
 
 .faq-answer-open {
-  max-height: 100px;
+  max-height: 300px; /* Increased to accommodate longer answers with line breaks */
   opacity: 1;
   padding: 0.8rem 1rem 0.8rem 2.5rem;
   border-top: 1px solid #e2e8f0;
@@ -135,6 +135,7 @@
   font-size: 0.8rem;
   color: #475569;
   line-height: 1.5;
+  white-space: pre-line; /* Preserves line breaks from the answer string */
 }
 
 /* Compact Contact */
@@ -212,6 +213,10 @@
     border-radius: 20px;
     padding: 1rem;
     width: 100%;
+  }
+
+  .faq-answer-open {
+    padding: 0.6rem 0.8rem 0.6rem 2rem;
   }
 }
 

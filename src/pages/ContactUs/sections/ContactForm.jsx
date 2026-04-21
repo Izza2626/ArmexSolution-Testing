@@ -1,101 +1,90 @@
 import React, { useState } from "react";
-import { 
-  FiMapPin, 
-  FiMail, 
-  FiPhone, 
-  FiClock, 
-  FiUser, 
+import {
+  FiMapPin,
+  FiMail,
+  FiPhone,
+  FiClock,
+  FiUser,
   FiSend,
   FiMessageSquare,
-  FiCheckCircle
+  FiCheckCircle,
+  FiGlobe
 } from "react-icons/fi";
 import "./ContactForm.css";
 
+const initialForm = {
+  name: "",
+  email: "",
+  phone: "",
+  service: "",
+  message: ""
+};
+
+const contactInfo = [
+  {
+    icon: <FiMapPin />,
+    title: "Corporate Office",
+    line1: "Chennai, Tamil Nadu, India - 600001",
+    color: "#C9A22D"
+  },
+  {
+    icon: <FiMail />,
+    title: "Mail Us",
+    line1: "admin@armexsolutions.com",
+    link: "mailto:admin@armexsolutions.com"
+  },
+  {
+    icon: <FiPhone />,
+    title: "Call Us",
+    line1: "+91 93427 61826",
+    link: "tel:+919840000000"
+  },
+  {
+    icon: <FiClock />,
+    title: "Working Hours",
+    line1: "Mon - Fri, 9:00 AM - 6:00 PM IST"
+  }
+];
+
+const services = [
+  "BIM-Driven 3D Rebar Modelling",
+  "Precision 2D Reinforcement Detailing & Shop Drawings",
+  "Optimized Bar Bending Schedules (BBS)",
+  "Model-Based Rebar Estimation & Quantity Intelligence",
+  "Integrated GA Drawings & Structural Coordination",
+  "Site Support & Reinforcement Reconciliation"
+];
+
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: ""
-  });
+  const [formData, setFormData] = useState(initialForm);
+  const [status, setStatus] = useState({ submitted: false, message: "" });
 
-  const [formStatus, setFormStatus] = useState({
-    submitted: false,
-    success: false,
-    message: ""
-  });
+  const handleChange = ({ target: { name, value } }) =>
+    setFormData(prev => ({ ...prev, [name]: value }));
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
-    // Form submission logic here
-    setFormStatus({
+
+    setStatus({
       submitted: true,
-      success: true,
       message: "Thank you! We'll contact you within 2 hours."
     });
-    
-    // Reset form after 3 seconds
+
     setTimeout(() => {
-      setFormStatus({ submitted: false, success: false, message: "" });
-      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+      setStatus({ submitted: false, message: "" });
+      setFormData(initialForm);
     }, 3000);
   };
 
-  const contactInfo = [
-    {
-      icon: <FiMapPin />,
-      title: "Corporate Office",
-      line1: "Chennai, Tamil Nadu, India - 600001",
-      color: "#C9A22D"
-    },
-    {
-      icon: <FiMail />,
-      title: "Mail Us",
-      line1: "admin@armexsolutions.com",
-      link: "mailto:admin@armexsolutions.com"
-    },
-    {
-      icon: <FiPhone />,
-      title: "Call Us",
-      line1: "+91 93427 61826",
-      link: "tel:+919840000000"
-    },
-    {
-      icon: <FiClock />,
-      title: "Working Hours",
-      line1: "Mon - Fri, 9:00 AM - 6:00 PM IST"
-    }
-  ];
-
-  const services = [
-    "3D Rebar Modelling",
-    "2D Shop Drawings",
-    "Bar Bending Schedules",
-    "Rebar Estimation",
-    "GA Drawings",
-    "Site Support"
-  ];
-
   return (
-    <section className="cf-section">
-      {/* Background Elements with Gold Gradient */}
+    <section className="cf-section" id="contactF">
       <div className="cf-bg-gradient"></div>
-      
-      {/* Animated Shapes */}
       <div className="cf-shape cf-shape-1"></div>
       <div className="cf-shape cf-shape-2"></div>
       <div className="cf-shape cf-shape-3"></div>
 
       <div className="cf-container">
-        
+
         {/* Header */}
         <div className="cf-header">
           <span className="cf-subtitle">CONTACT US</span>
@@ -108,149 +97,123 @@ const ContactForm = () => {
         </div>
 
         <div className="cf-grid">
-          
-          {/* Left - Contact Info Cards */}
+
+          {/* Contact Info */}
           <div className="cf-info">
             <h3 className="cf-info-title">Contact Information</h3>
-            
+
             <div className="cf-info-grid">
-              {contactInfo.map((info, index) => (
-                <div key={index} className="cf-info-card">
+              {contactInfo.map((item, i) => (
+                <div key={i} className="cf-info-card">
                   <div className="cf-info-icon-wrapper">
-                    <div className="cf-info-icon">{info.icon}</div>
+                    <div className="cf-info-icon">{item.icon}</div>
                   </div>
+
                   <div className="cf-info-content">
-                    <h4>{info.title}</h4>
-                    {info.link ? (
-                      <a href={info.link} className="cf-info-link">
-                        {info.line1}
+                    <h4>{item.title}</h4>
+                    {item.link ? (
+                      <a href={item.link} className="cf-info-link">
+                        {item.line1}
                       </a>
                     ) : (
-                      <p className="cf-info-text">{info.line1}</p>
+                      <p className="cf-info-text">{item.line1}</p>
                     )}
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Additional Info - makes box taller to match form */}
-            <div className="cf-info-footer">
-              <p className="cf-info-response">⏱️ Average response: within 2 hours</p>
-              <p className="cf-info-support">🌍 Serving clients across USA, UK, UAE & India</p>
-            </div>
+              <div className="cf-info-footer">
+                <p className="cf-info-response">
+                  <FiClock className="cf-footer-icon" />
+                  Average response: within 2 hours
+                </p>
+                <p className="cf-info-support">
+                  <FiGlobe className="cf-footer-icon" />
+                  Serving clients across USA, UK, UAE & India
+                </p>
+              </div>
           </div>
 
-          {/* Right - Form */}
+          {/* Form */}
           <div className="cf-form-wrapper">
             <div className="cf-form-card">
-              <p className="cf-form-title">Our Experts Can Help You Get the Best Out of Our Your Business</p>
-              
-              {formStatus.submitted ? (
+              <p className="cf-form-title">
+                Our Experts Can Help You Get the Best Out of Our Your Business
+              </p>
+
+              {status.submitted ? (
                 <div className="cf-success">
                   <FiCheckCircle className="cf-success-icon" />
-                  <p>{formStatus.message}</p>
+                  <p>{status.message}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="cf-form">
-                  
-                  {/* Name Field */}
-                  <div className="cf-field">
-                    <label htmlFor="name">Full Name *</label>
-                    <div className="cf-field-input">
-                      <FiUser className="cf-field-icon" />
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="John Doe"
-                        required
-                      />
-                    </div>
-                  </div>
 
-                  {/* Email Field */}
-                  <div className="cf-field">
-                    <label htmlFor="email">Email Address *</label>
-                    <div className="cf-field-input">
-                      <FiMail className="cf-field-icon" />
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="john@example.com"
-                        required
-                      />
+                  {/* Input Helper */}
+                  {[
+                    { label: "Full Name *", name: "name", icon: <FiUser />, type: "text", required: true, placeholder: "Full Name" },
+                    { label: "Email Address *", name: "email", icon: <FiMail />, type: "email", required: true, placeholder: "abc@example.com" },
+                    { label: "Phone Number", name: "phone", icon: <FiPhone />, type: "tel", placeholder: "+91 98400 00000" }
+                  ].map((field, i) => (
+                    <div key={i} className="cf-field">
+                      <label>{field.label}</label>
+                      <div className="cf-field-input">
+                        {field.icon}
+                        <input
+                          {...field}
+                          value={formData[field.name]}
+                          onChange={handleChange}
+                        />
+                      </div>
                     </div>
-                  </div>
+                  ))}
 
-                  {/* Phone Field */}
+                  {/* Service */}
                   <div className="cf-field">
-                    <label htmlFor="phone">Phone Number</label>
-                    <div className="cf-field-input">
-                      <FiPhone className="cf-field-icon" />
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="+91 98400 00000"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Service Selection */}
-                  <div className="cf-field">
-                    <label htmlFor="service">Service Interested In</label>
+                    <label>Service Interested In</label>
                     <div className="cf-field-input">
                       <FiMessageSquare className="cf-field-icon" />
                       <select
-                        id="service"
                         name="service"
                         value={formData.service}
                         onChange={handleChange}
                       >
                         <option value="">Select a service</option>
-                        {services.map((service, index) => (
-                          <option key={index} value={service}>{service}</option>
+                        {services.map((s, i) => (
+                          <option key={i} value={s}>{s}</option>
                         ))}
                       </select>
                     </div>
                   </div>
 
-                  {/* Message Field */}
+                  {/* Message */}
                   <div className="cf-field cf-field-full">
-                    <label htmlFor="message">Your Message *</label>
+                    <label>Your Message *</label>
                     <div className="cf-field-input cf-textarea">
                       <FiMessageSquare className="cf-field-icon" />
                       <textarea
-                        id="message"
                         name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Tell us about your project..."
                         rows="4"
                         required
+                        placeholder="Tell us about your project..."
+                        value={formData.message}
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
 
-                  {/* Submit Button */}
                   <button type="submit" className="cf-submit-btn">
                     <span>Send Message</span>
                     <FiSend className="cf-submit-icon" />
                     <div className="cf-btn-glare"></div>
                   </button>
 
-                  {/* Privacy Note */}
                   <p className="cf-privacy">
-                    By submitting, you agree to our privacy policy. 
+                    By submitting, you agree to our privacy policy.
                     We'll respond within 2 hours.
                   </p>
+
                 </form>
               )}
             </div>

@@ -2,12 +2,12 @@ import { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import "./ServicesHero.css";
 
-import SerHero1 from '../../../assets/images/Service/Service1.jpeg'
-import SerHero2 from '../../../assets/images/Service/Service2.jpg'
-import SerHero3 from '../../../assets/images/Service/Service3.jpeg'
-import SerHero4 from '../../../assets/images/Service/Service4.jpeg'
-import SerHero5 from '../../../assets/images/Service/Service5.jpeg'
-import SerHero6 from '../../../assets/images/Service/Service6.jpg'
+import SerHero1 from '../../../assets/images/Service/Service1.png'
+import SerHero2 from '../../../assets/images/Service/Service2.png'
+import SerHero3 from '../../../assets/images/Service/Service3.png'
+import SerHero4 from '../../../assets/images/Service/Service4.png'
+import SerHero5 from '../../../assets/images/Service/Service5.png'
+import SerHero6 from '../../../assets/images/Service/Service6.png'
 
 const services = [
   {
@@ -85,6 +85,11 @@ export default function ServiceHero() {
 
   const visibleServices = services.slice(startIndex, startIndex + cardsPerPage);
 
+  const scrollToServices = () => {
+  const section = document.getElementById('services-list');
+  section?.scrollIntoView({ behavior: 'smooth' });
+};
+
   return (
     <section className="sh-hero">
       {/* Background Image */}
@@ -104,7 +109,9 @@ export default function ServiceHero() {
 
           <p className="sh-desc">{services[active].description}</p>
 
-          <button className="sh-btn">Explore Service</button>
+          <button className="sh-btn" onClick={scrollToServices}>
+            Explore Services
+          </button>
         </div>
 
         {/* CARDS */}

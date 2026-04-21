@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import SEO from "../../seo/SEO"; // ✅ SEO IMPORT
+
 import { 
   FiFileText, 
   FiLock, 
@@ -90,111 +92,116 @@ const TermsConditions = () => {
   };
 
   return (
-    <section className="tc-section">
-      <div className="tc-container">
-        
-        {/* Header */}
-        <div className="tc-header">
-          <span className="tc-subtitle">LEGAL AGREEMENT</span>
-          <h1 className="tc-title">
-            Terms & <span>Conditions</span>
-          </h1>
-          <p className="tc-desc">
-            Last updated: March 15, 2025 · Version 2.0
-          </p>
-        </div>
+    <>
+      {/* ✅ SEO ADDED */}
+      <SEO page="terms" />
 
-        {/* Status Bar */}
-        <div className="tc-status-bar">
-          <div className="tc-status-item">
-            <span className="tc-status-label">DOCUMENT</span>
-            <span className="tc-status-value">TERMS_v2.0</span>
-          </div>
-          <div className="tc-status-divider"></div>
-          <div className="tc-status-item">
-            <span className="tc-status-label">SECTIONS</span>
-            <span className="tc-status-value">{tabs.length}</span>
-          </div>
-          <div className="tc-status-divider"></div>
-          <div className="tc-status-item">
-            <span className="tc-status-label">STATUS</span>
-            <span className="tc-status-value">ACTIVE</span>
-          </div>
-          <div className="tc-status-divider"></div>
-          <div className="tc-status-item">
-            <span className="tc-status-label">EFFECTIVE</span>
-            <span className="tc-status-value">15 MAR 2025</span>
-          </div>
-        </div>
-
-        {/* Main Content with Tabs */}
-        <div className="tc-main">
+      <section className="tc-section">
+        <div className="tc-container">
           
-          {/* Left Side - Tabs */}
-          <div className="tc-tabs">
-            {tabs.map((tab, index) => (
-              <button
-                key={index}
-                className={`tc-tab ${activeTab === index ? 'tc-tab-active' : ''}`}
-                onClick={() => handleTabClick(index)}
-              >
-                <span className="tc-tab-icon">{tab.icon}</span>
-                <span className="tc-tab-title">{tab.title}</span>
-                <FiArrowRight className="tc-tab-arrow" />
-                <span className="tc-tab-number">{String(index + 1).padStart(2, '0')}</span>
-              </button>
-            ))}
+          {/* Header */}
+          <div className="tc-header">
+            <span className="tc-subtitle">LEGAL AGREEMENT</span>
+            <h1 className="tc-title">
+              Terms & <span>Conditions</span>
+            </h1>
+            <p className="tc-desc">
+              Last updated: March 15, 2025 · Version 2.0
+            </p>
           </div>
 
-          {/* Right Side - Content */}
-          <div className={`tc-content ${contentVisible ? 'tc-content-visible' : ''}`}>
-            <div className="tc-content-card">
-              <div className="tc-content-header">
-                <span className="tc-content-badge">
-                  SECTION {String(activeTab + 1).padStart(2, '0')}
-                </span>
-                <h2>{tabs[activeTab].title}</h2>
-              </div>
-              <div className="tc-content-body">
-                <p>{tabs[activeTab].content}</p>
-              </div>
-              <div className="tc-content-footer">
-                <div className="tc-progress">
-                  <div 
-                    className="tc-progress-bar" 
-                    style={{ width: `${((activeTab + 1) / tabs.length) * 100}%` }}
-                  ></div>
+          {/* Status Bar */}
+          <div className="tc-status-bar">
+            <div className="tc-status-item">
+              <span className="tc-status-label">DOCUMENT</span>
+              <span className="tc-status-value">TERMS_v2.0</span>
+            </div>
+            <div className="tc-status-divider"></div>
+            <div className="tc-status-item">
+              <span className="tc-status-label">SECTIONS</span>
+              <span className="tc-status-value">{tabs.length}</span>
+            </div>
+            <div className="tc-status-divider"></div>
+            <div className="tc-status-item">
+              <span className="tc-status-label">STATUS</span>
+              <span className="tc-status-value">ACTIVE</span>
+            </div>
+            <div className="tc-status-divider"></div>
+            <div className="tc-status-item">
+              <span className="tc-status-label">EFFECTIVE</span>
+              <span className="tc-status-value">15 MAR 2025</span>
+            </div>
+          </div>
+
+          {/* Main Content with Tabs */}
+          <div className="tc-main">
+            
+            {/* Tabs */}
+            <div className="tc-tabs">
+              {tabs.map((tab, index) => (
+                <button
+                  key={index}
+                  className={`tc-tab ${activeTab === index ? 'tc-tab-active' : ''}`}
+                  onClick={() => handleTabClick(index)}
+                >
+                  <span className="tc-tab-icon">{tab.icon}</span>
+                  <span className="tc-tab-title">{tab.title}</span>
+                  <FiArrowRight className="tc-tab-arrow" />
+                  <span className="tc-tab-number">{String(index + 1).padStart(2, '0')}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Content */}
+            <div className={`tc-content ${contentVisible ? 'tc-content-visible' : ''}`}>
+              <div className="tc-content-card">
+                <div className="tc-content-header">
+                  <span className="tc-content-badge">
+                    SECTION {String(activeTab + 1).padStart(2, '0')}
+                  </span>
+                  <h2>{tabs[activeTab].title}</h2>
                 </div>
-                <span className="tc-page-indicator">
-                  {activeTab + 1} / {tabs.length}
-                </span>
+                <div className="tc-content-body">
+                  <p>{tabs[activeTab].content}</p>
+                </div>
+                <div className="tc-content-footer">
+                  <div className="tc-progress">
+                    <div 
+                      className="tc-progress-bar" 
+                      style={{ width: `${((activeTab + 1) / tabs.length) * 100}%` }}
+                    ></div>
+                  </div>
+                  <span className="tc-page-indicator">
+                    {activeTab + 1} / {tabs.length}
+                  </span>
+                </div>
               </div>
+            </div>
+
+          </div>
+
+          {/* Acceptance */}
+          <div className="tc-acceptance">
+            <FiCheckCircle className="tc-acceptance-icon" />
+            <span>By using our services, you agree to these Terms and Conditions</span>
+          </div>
+
+          {/* Contact */}
+          <div className="tc-contact">
+            <div className="tc-contact-item">
+              <FiMail className="tc-contact-icon" />
+              <a href="mailto:admin@armexsolutions.com">admin@armexsolutions.com</a>
+            </div>
+            <div className="tc-contact-divider"></div>
+            <div className="tc-contact-item">
+              <FiShield className="tc-contact-icon" />
+              <span>Chennai, India</span>
             </div>
           </div>
 
         </div>
-
-        {/* Acceptance Bar */}
-        <div className="tc-acceptance">
-          <FiCheckCircle className="tc-acceptance-icon" />
-          <span>By using our services, you agree to these Terms and Conditions</span>
-        </div>
-
-        {/* Contact Footer */}
-        <div className="tc-contact">
-          <div className="tc-contact-item">
-            <FiMail className="tc-contact-icon" />
-            <a href="mailto:admin@armexsolutions.com">admin@armexsolutions.com</a>
-          </div>
-          <div className="tc-contact-divider"></div>
-          <div className="tc-contact-item">
-            <FiShield className="tc-contact-icon" />
-            <span>Chennai, India</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

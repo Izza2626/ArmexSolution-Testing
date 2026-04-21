@@ -1,7 +1,7 @@
 import React from "react";
 import { FiArrowDown } from "react-icons/fi";
 import "./ContactHero.css";
-import ContactH from '../../../assets/images/Contact/ContactHero.png'
+import ContactH from '../../../assets/images/Contact/ContactHero.jpeg'
 
 const ContactHero = () => {
   return (

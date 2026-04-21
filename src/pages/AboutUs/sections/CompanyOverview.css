@@ -1,41 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 .co-section {
-  padding: 80px 0;
+  padding: 70px 0;
   background: #ffffff;
   font-family: 'Poppins', sans-serif;
   position: relative;
   overflow: hidden;
 }
 
-/* Background animated elements */
+/* Background animated elements – more subtle */
 .co-bg-circle {
   position: absolute;
   border-radius: 50%;
-  background: rgba(201, 162, 45, 0.03);
+  background: rgba(201, 162, 45, 0.04);
   z-index: 1;
+  pointer-events: none;
 }
 
 .co-bg-circle-1 {
-  width: 400px;
-  height: 400px;
-  top: -100px;
-  right: -100px;
-  animation: coCircleFloat 15s ease-in-out infinite;
+  width: 350px;
+  height: 350px;
+  top: -120px;
+  right: -80px;
+  animation: coCircleFloat 18s ease-in-out infinite;
 }
 
 .co-bg-circle-2 {
-  width: 300px;
-  height: 300px;
-  bottom: -50px;
-  left: -50px;
-  animation: coCircleFloat 20s ease-in-out infinite reverse;
+  width: 250px;
+  height: 250px;
+  bottom: -60px;
+  left: -60px;
+  animation: coCircleFloat 22s ease-in-out infinite reverse;
 }
 
 @keyframes coCircleFloat {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -30px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
+  50% { transform: translate(15px, -15px) scale(1.05); }
 }
 
 .co-bg-dots {
@@ -44,15 +44,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(rgba(201, 162, 45, 0.1) 1px, transparent 1px);
-  background-size: 30px 30px;
-  animation: coDotsMove 30s linear infinite;
+  background-image: radial-gradient(rgba(201, 162, 45, 0.08) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  animation: coDotsMove 40s linear infinite;
+  opacity: 0.6;
   z-index: 1;
+  pointer-events: none;
 }
 
 @keyframes coDotsMove {
   0% { background-position: 0 0; }
-  100% { background-position: 60px 60px; }
+  100% { background-position: 48px 48px; }
 }
 
 .co-container {
@@ -61,7 +63,7 @@
   padding: 0 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 50px;
   align-items: center;
   position: relative;
   z-index: 2;
@@ -70,13 +72,13 @@
 /* ===== ANIMATION CLASSES (entrance only) ===== */
 .co-fade-left {
   opacity: 0;
-  animation: coFadeLeft 0.8s ease-out forwards;
+  animation: coFadeLeft 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
 }
 
 @keyframes coFadeLeft {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-24px);
   }
   to {
     opacity: 1;
@@ -86,13 +88,13 @@
 
 .co-fade-right {
   opacity: 0;
-  animation: coFadeRight 0.8s ease-out 0.2s forwards;
+  animation: coFadeRight 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1) 0.15s forwards;
 }
 
 @keyframes coFadeRight {
   from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(24px);
   }
   to {
     opacity: 1;
@@ -102,13 +104,13 @@
 
 .co-slide-down {
   opacity: 0;
-  animation: coSlideDown 0.6s ease-out 0.1s forwards;
+  animation: coSlideDown 0.5s ease-out 0.1s forwards;
 }
 
 @keyframes coSlideDown {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-12px);
   }
   to {
     opacity: 1;
@@ -118,13 +120,13 @@
 
 .co-slide-up {
   opacity: 0;
-  animation: coSlideUp 0.6s ease-out 0.3s forwards;
+  animation: coSlideUp 0.5s ease-out 0.25s forwards;
 }
 
 @keyframes coSlideUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -132,104 +134,107 @@
   }
 }
 
-/* ===== LEFT CONTENT (unchanged) ===== */
+/* ===== LEFT CONTENT (refined, compact) ===== */
 .co-badge {
   display: inline-block;
-  background: rgba(201, 162, 45, 0.1);
+  background: rgba(201, 162, 45, 0.12);
   color: #C9A22D;
-  padding: 6px 14px;
+  padding: 5px 12px;
   font-size: 12px;
-  border-radius: 20px;
-  margin-bottom: 15px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  border-radius: 30px;
+  margin-bottom: 16px;
+  backdrop-filter: blur(2px);
 }
 
 .co-title {
-  font-size: 36px;
+  font-size: 34px;
   font-weight: 700;
   line-height: 1.3;
   color: #0f172a;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  letter-spacing: -0.3px;
 }
 
 .co-title span {
   color: #C9A22D;
+  background: linear-gradient(135deg, #C9A22D 0%, #b88d1f 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .co-desc {
   color: #475569;
-  margin-bottom: 25px;
-  line-height: 1.7;
+  margin-bottom: 20px;
+  line-height: 1.65;
   max-width: 500px;
+  font-size: 15px;
 }
 
-/* ===== PUZZLE SQUARE (2x2 grid, joined like a square) ===== */
-.co-puzzle-square {
+/* ===== RIGHT SIDE – MODERN COLLAGE (2x2 grid with gaps & hover effects) ===== */
+.co-collage-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;               /* no gaps – edges touch */
+  grid-template-rows: 1fr 1fr;   /* forces both rows to take equal height */
+  gap: 18px;
   width: 100%;
-  aspect-ratio: 1 / 1;  /* forces a perfect square */
-  background: #fff;
+  aspect-ratio: 1 / 1;           /* container is a perfect square */
+}
+
+.co-collage-item {
+  position: relative;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-}
-
-.co-puzzle-tile {
-  position: relative;
+  background: #f1f5f9;
+  box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.15);
+  transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
   cursor: pointer;
-  overflow: hidden;
-  background: #f0f0f0;
-  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-  z-index: 1;
-}
-
-/* Image inside tile */
-.co-puzzle-tile img {
+  opacity: 0;
+  transform: scale(0.96);
+  animation: coCollageFadeIn 0.5s ease-out forwards;
+  /* ensure each item fills its grid cell completely */
   width: 100%;
   height: 100%;
-  object-fit: cover;
+}
+
+@keyframes coCollageFadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.co-collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* covers the area without distortion */
   display: block;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
-/* Hover effect on tile (when not in disabled state) */
-.co-puzzle-tile:hover:not(.disabled) img {
-  transform: scale(1.03);
+/* Hover effect */
+.co-collage-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 32px -14px rgba(0, 0, 0, 0.2);
 }
 
-/* Active (clicked) tile – comes to front, scales up */
-.co-puzzle-tile.active {
-  z-index: 10;
-  transform: scale(1.08);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  border-radius: 16px;
-  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+.co-collage-item:hover img {
+  transform: scale(1.05);
 }
 
-/* Disabled tiles (when any tile is active) */
-.co-puzzle-tile.disabled {
-  filter: brightness(0.7) blur(1px);
-  cursor: default;
-  pointer-events: none;   /* makes them non-clickable */
-}
-
-/* To keep the square look when active tile scales up,
-   we need to allow overflow. The container has overflow: hidden,
-   so we temporarily change it on hover/active? Better to allow
-   overflow visible for the container when active. */
-.co-puzzle-square:has(.co-puzzle-tile.active) {
-  overflow: visible;
-}
-
-/* Ensure the active tile doesn't get cropped */
-.co-puzzle-tile.active {
-  position: relative;
-  margin: -8px;  /* compensates scale and keeps within square */
-  z-index: 20;
+/* Optional golden glow on hover */
+.co-collage-item:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  box-shadow: inset 0 0 0 2px rgba(201, 162, 45, 0.5);
+  pointer-events: none;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -241,21 +246,35 @@
   .co-right {
     order: -1;
   }
-  .co-puzzle-square {
-    max-width: 500px;
+  .co-collage-grid {
+    max-width: 480px;
     margin: 0 auto;
+    gap: 14px;
+  }
+  .co-title {
+    font-size: 32px;
   }
 }
 
 @media (max-width: 600px) {
   .co-section {
-    padding: 60px 0;
+    padding: 50px 0;
+  }
+  .co-container {
+    padding: 0 20px;
+    gap: 32px;
   }
   .co-title {
     font-size: 28px;
   }
-  .co-puzzle-tile.active {
-    transform: scale(1.05);
-    margin: -4px;
+  .co-desc {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .co-collage-grid {
+    gap: 12px;
+  }
+  .co-collage-item {
+    border-radius: 18px;
   }
 }

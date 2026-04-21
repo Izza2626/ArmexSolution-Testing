@@ -42,7 +42,7 @@ const ServiceCategories = () => {
   };
 
   return (
-    <section className="sc-section">
+    <section className="sc-section" id="ServiceCat">
       {/* Background Pattern */}
       <div className="sc-pattern"></div>
 

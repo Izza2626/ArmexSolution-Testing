@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import './HomeWhyUs.css';
 
-import HomeWhy from '../../../assets/images/Home/HomeWhy.jpg'
+import HomeWhy from '../../../assets/images/Home/HomeWhy.png'
 
 const HomeWhyUs = () => {
   const [ref, inView] = useInView({
@@ -13,7 +13,7 @@ const HomeWhyUs = () => {
   const stats = [
     { number: "10+", label: "Years Experience", delay: 0.3 },
     { number: "100+", label: "Projects", delay: 0.4 },
-    { number: "10+", label: "Countries Served", delay: 0.5 },
+    { number: "5+", label: "Countries Served", delay: 0.5 },
     { number: "99.9%", label: "Accuracy Rate", delay: 0.6 }
   ];
 
@@ -22,7 +22,7 @@ const HomeWhyUs = () => {
       {/* Background Image with Dark Overlay */}
       <div className="homeWhyUs-bg">
         <img 
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+          src={HomeWhy}
           alt="Construction site background"
         />
         <div className="homeWhyUs-overlay"></div>
